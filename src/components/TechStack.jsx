@@ -2,26 +2,27 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const techStack = {
-    "Frontend": [
-        { name: "React", level: 95 },
-        { name: "Next.js", level: 90 },
-        { name: "Tailwind CSS", level: 98 },
-        { name: "Three.js", level: 75 },
-        { name: "TypeScript", level: 85 },
+    "PROGRAMMING": [
+        "C", "C# Core Web API", "C# GUI", "Java", "JavaScript", "PHP", "Kotlin", "Assembly", "Python"
     ],
-    "Backend": [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "Redis", level: 75 },
-        { name: "GraphQL", level: 80 },
+    "WEB DEVELOPMENT": [
+        "HTML/CSS", "Tailwind", "jQuery", "React", "Vite", "React Native", "ASP.NET", "MVC",
+        "MVVM", "Laravel", "Swagger API", "Figma", "AntDesign"
     ],
-    "DevOps & Tools": [
-        { name: "Docker", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "Git", level: 95 },
-        { name: "Figma", level: 90 },
-        { name: "Jest", level: 80 },
+    "BACKEND & TOOLS": [
+        "LINQ", "Refit", "Axios", "Redux", "Node.js", "FastAPI", "Firebase", "MySQL", "MongoDB", "PostgreSQL", "Cloudinary"
+    ],
+    "DEVOPS & DEPLOYMENT": [
+        "IIS", "Cloudflare", "Nginx", "Google Cloud"
+    ],
+    "INTEGRATIONS": [
+        "Google Maps API", "Google AI Studio (AI/ML integrations)", "MQTT", "PayMongo", "Stripe", "Twilio"
+    ],
+    "AI & MACHINE LEARNING": [
+        "OpenCV", "TensorFlow/Keras", "HuggingFace Transformers", "AI/Machine Learning"
+    ],
+    "VERSION CONTROL": [
+        "GitHub"
     ]
 };
 
@@ -34,35 +35,27 @@ const TechStack = () => {
                     <h3 className="text-4xl md:text-5xl font-bold text-white">Technology Stack</h3>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-10">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {Object.entries(techStack).map(([category, skills], index) => (
                         <motion.div
                             key={category}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.2, duration: 0.6 }}
+                            transition={{ delay: index * 0.1, duration: 0.5 }}
                             viewport={{ once: true }}
-                            className="bg-dark/50 p-8 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors"
+                            className="bg-dark/50 p-6 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors h-full"
                         >
                             <h4 className="text-xl font-bold text-white mb-6 border-b border-primary/20 pb-2 inline-block">
                                 {category}
                             </h4>
-                            <div className="space-y-6">
+                            <div className="flex flex-wrap gap-3">
                                 {skills.map((skill) => (
-                                    <div key={skill.name}>
-                                        <div className="flex justify-between mb-2">
-                                            <span className="text-slate-300 font-medium">{skill.name}</span>
-                                            <span className="text-primary text-sm">{skill.level}%</span>
-                                        </div>
-                                        <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
-                                            <motion.div
-                                                initial={{ width: 0 }}
-                                                whileInView={{ width: `${skill.level}%` }}
-                                                transition={{ duration: 1, ease: "easeOut" }}
-                                                className="h-full bg-gradient-to-r from-primary to-indigo-500 rounded-full"
-                                            />
-                                        </div>
-                                    </div>
+                                    <span
+                                        key={skill}
+                                        className="px-3 py-1.5 bg-slate-800/50 hover:bg-primary/20 text-slate-300 hover:text-white rounded-lg text-sm transition-all duration-300 border border-white/5 hover:border-primary/50"
+                                    >
+                                        {skill}
+                                    </span>
                                 ))}
                             </div>
                         </motion.div>
