@@ -7,6 +7,17 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { scrollY } = useScroll();
 
+    // Close mobile menu on resize to desktop
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     useMotionValueEvent(scrollY, "change", (latest) => {
         if (latest > 50) {
             setIsScrolled(true);
@@ -33,7 +44,9 @@ const Navbar = () => {
 
     return (
         <motion.nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark/80 backdrop-blur-md py-4 border-b border-primary/10' : 'bg-transparent py-6'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
+                ? 'bg-dark/80 backdrop-blur-md py-4 border-primary/10'
+                : 'bg-transparent py-6 border-transparent'
                 }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
@@ -79,7 +92,7 @@ const Navbar = () => {
                 <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="md:hidden bg-dark/95 backdrop-blur-lg border-b border-white/10"
+                    className="md:hidden bg-dark/95 backdrop-blur-lg border-t border-white/5"
                 >
                     <div className="flex flex-col p-6 space-y-4">
                         {navLinks.map((link) => (

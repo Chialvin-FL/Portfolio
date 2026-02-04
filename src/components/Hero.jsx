@@ -6,20 +6,8 @@ import Antigravity from './Antigravity';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark">
-            {/* Background 3D Animation */}
-            <div className="absolute inset-0 z-0">
-                <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-                    <Suspense fallback={null}>
-                        <Antigravity count={150} />
-                        {/* Optional: Add orbit controls if interaction is desired, but disable zoom/pan for background */}
-                        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
-                    </Suspense>
-                </Canvas>
-            </div>
-
-            {/* Gradient overlay for better text readability */}
-            <div className="absolute inset-0 bg-dark/40 pointer-events-none z-0" />
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            {/* 3D Animation removed from here, now handled globally in Background.jsx */}
 
             <div className="container mx-auto px-6 relative z-10 text-center pointer-events-none">
                 <motion.div

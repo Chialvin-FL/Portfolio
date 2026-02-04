@@ -28,7 +28,7 @@ const techStack = {
 
 const TechStack = () => {
     return (
-        <section id="tech-stack" className="py-24 bg-secondary">
+        <section id="tech-stack" className="py-24">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-primary text-sm font-bold uppercase tracking-widest mb-2">Expertise</h2>

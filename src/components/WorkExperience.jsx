@@ -44,7 +44,7 @@ const WorkExperience = () => {
     const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
     return (
-        <section id="experience" className="py-24 bg-dark overflow-hidden" ref={targetRef}>
+        <section id="experience" className="py-24 relative overflow-hidden" ref={targetRef}>
             <div className="container mx-auto px-6 relative">
                 <div className="text-center mb-20">
                     <h2 className="text-primary text-sm font-bold uppercase tracking-widest mb-2">Our Journey</h2>

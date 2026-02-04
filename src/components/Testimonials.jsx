@@ -28,7 +28,7 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section className="py-24 bg-secondary">
+        <section className="py-24">
             <div className="container mx-auto px-6 text-center">
                 <div className="mb-16">
                     <h2 className="text-primary text-sm font-bold uppercase tracking-widest mb-2">Client Feedback</h2>

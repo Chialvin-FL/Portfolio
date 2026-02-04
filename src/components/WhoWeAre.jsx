@@ -19,7 +19,7 @@ const WhoWeAre = () => {
     };
 
     return (
-        <section id="who-we-are" className="py-24 bg-secondary relative overflow-hidden">
+        <section id="who-we-are" className="py-24 relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial="hidden"

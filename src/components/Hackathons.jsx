@@ -28,7 +28,7 @@ const awards = [
 
 const Hackathons = () => {
     return (
-        <section id="hackathons" className="py-24 bg-dark relative overflow-hidden">
+        <section id="hackathons" className="py-24 bg-dark/95 backdrop-blur-sm relative overflow-hidden border-y border-white/5 shadow-2xl">
             {/* Background Decorative Elements */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform translate-x-1/4 pointer-events-none" />
 

@@ -45,7 +45,7 @@ const FeaturedWorks = () => {
     const [selectedId, setSelectedId] = useState(null);
 
     return (
-        <section id="featured-works" className="py-24 bg-dark relative">
+        <section id="featured-works" className="py-24 relative">
             <div className="container mx-auto px-6">
                 <div className="mb-16">
                     <h2 className="text-primary text-sm font-bold uppercase tracking-widest mb-2">Portfolio</h2>
