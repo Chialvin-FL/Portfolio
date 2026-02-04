@@ -53,7 +53,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <a href="#" className="text-2xl font-bold bg-gradient-to-r from-primary to-indigo-400 bg-clip-text text-transparent" onClick={(e) => handleScroll(e, '#')}>
+                <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-primary to-indigo-400 bg-clip-text text-transparent" onClick={(e) => handleScroll(e, '#home')}>
                     DEV<span className="text-white">DUO</span>.
                 </a>
 

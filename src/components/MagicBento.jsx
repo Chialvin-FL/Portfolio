@@ -1,5 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
+import { motion } from 'framer-motion';
 import './MagicBento.css';
 
 const DEFAULT_PARTICLE_COUNT = 12;
@@ -443,7 +444,8 @@ const MagicBento = ({
     enableTilt = false,
     glowColor = DEFAULT_GLOW_COLOR,
     clickEffect = true,
-    enableMagnetism = true
+    enableMagnetism = true,
+    cardVariants = null
 }) => {
     const gridRef = useRef(null);
     const isMobile = useMobileDetection();
@@ -474,25 +476,43 @@ const MagicBento = ({
 
                     if (enableStars) {
                         return (
-                            <ParticleCard
+                            <motion.div
                                 key={index}
-                                {...cardProps}
-                                disableAnimations={shouldDisableAnimations}
-                                particleCount={particleCount}
-                                glowColor={glowColor}
-                                enableTilt={enableTilt}
-                                clickEffect={clickEffect}
-                                enableMagnetism={enableMagnetism}
+                                variants={cardVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                className="h-full"
                             >
-                                <div className="magic-bento-card__header">
-                                    <div className="magic-bento-card__label">{card.label}</div>
-                                    {card.icon && <div className="text-primary">{card.icon}</div>}
-                                </div>
-                                <div className="magic-bento-card__content">
-                                    <h3 className="magic-bento-card__title">{card.title}</h3>
-                                    <p className="magic-bento-card__description">{card.description}</p>
-                                </div>
-                            </ParticleCard>
+                                <ParticleCard
+                                    {...cardProps}
+                                    disableAnimations={shouldDisableAnimations}
+                                    particleCount={particleCount}
+                                    glowColor={glowColor}
+                                    enableTilt={enableTilt}
+                                    clickEffect={clickEffect}
+                                    enableMagnetism={enableMagnetism}
+                                >
+                                    <div className="magic-bento-card__header">
+                                        <div className="magic-bento-card__label">{card.label}</div>
+                                        {card.icon && <div className="text-primary">{card.icon}</div>}
+                                    </div>
+                                    <div className="magic-bento-card__content">
+                                        <h3 className="magic-bento-card__title">{card.title}</h3>
+                                        {card.tags ? (
+                                            <div className="flex flex-wrap gap-2 mt-2">
+                                                {card.tags.map(tag => (
+                                                    <span key={tag} className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded shadow-sm border border-primary/20 uppercase tracking-wider">
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <p className="magic-bento-card__description">{card.description}</p>
+                                        )}
+                                    </div>
+                                </ParticleCard>
+                            </motion.div>
                         );
                     }
 
