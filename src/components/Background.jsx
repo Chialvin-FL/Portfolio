@@ -33,9 +33,9 @@ const Background = () => {
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-dark bg-gradient-to-b from-dark via-secondary/20 to-dark">
             {/* Global 3D Particle Animation - Sticky to stay in viewport while scrolling */}
             <div className="sticky top-0 h-screen w-full z-0 opacity-40">
-                <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+                <Canvas camera={{ position: [0, 0, 35], fov: 40 }}>
                     <Suspense fallback={null}>
-                        <Antigravity count={150} />
+                        <Antigravity count={300} />
                     </Suspense>
                 </Canvas>
             </div>

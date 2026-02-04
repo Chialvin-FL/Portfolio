@@ -1,60 +1,191 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const Particle = ({ x, y, z, size, color }) => {
-    const mesh = useRef();
-    const initialY = y;
-    const speed = useMemo(() => Math.random() * 0.01 + 0.005, []);
-    const offset = useMemo(() => Math.random() * Math.PI * 2, []);
-
-    useFrame((state) => {
-        const time = state.clock.getElapsedTime();
-        // Floating motion
-        mesh.current.position.y += speed;
-        mesh.current.position.x = x + Math.sin(time + offset) * 0.2;
-
-        // Reset position when it goes too high with a buffer
-        if (mesh.current.position.y > 10) {
-            mesh.current.position.y = -10;
-        }
-    });
-
-    return (
-        <mesh ref={mesh} position={[x, y, z]}>
-            <sphereGeometry args={[size, 16, 16]} />
-            <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.5} transparent opacity={0.8} />
-        </mesh>
-    );
-};
-
-const Antigravity = ({ count = 100 }) => {
+const Antigravity = ({
+    count = 300,
+    magnetRadius = 10,
+    ringRadius = 10,
+    waveSpeed = 0.4,
+    waveAmplitude = 1,
+    particleSize = 0.7,
+    lerpSpeed = 0.1,
+    color = '#0ea5e9', // Primary sky-blue color
+    autoAnimate = false,
+    particleVariance = 1,
+    rotationSpeed = 0,
+    depthFactor = 1,
+    pulseSpeed = 3,
+    particleShape = 'sphere',
+    fieldStrength = 10
+}) => {
+    const meshRef = useRef(null);
     const { viewport } = useThree();
+    const dummy = useMemo(() => new THREE.Object3D(), []);
+
+    const lastMousePos = useRef({ x: 0, y: 0 });
+    const lastMouseMoveTime = useRef(0);
+    const virtualMouse = useRef({ x: 0, y: 0 });
 
     const particles = useMemo(() => {
         const temp = [];
-        const colors = ['#6366f1', '#8b5cf6', '#a855f7', '#d946ef', '#06b6d4']; // Primary/Indigo/Purple/Cyan
+        const width = viewport.width || 100;
+        const height = viewport.height || 100;
 
         for (let i = 0; i < count; i++) {
-            const x = (Math.random() - 0.5) * viewport.width * 1.5;
-            const y = (Math.random() - 0.5) * viewport.height * 2;
-            const z = (Math.random() - 0.5) * 10 - 5; // Depth
-            const size = Math.random() * 0.05 + 0.01;
-            const color = colors[Math.floor(Math.random() * colors.length)];
+            const t = Math.random() * 100;
+            const factor = 20 + Math.random() * 100;
+            const speed = 0.01 + Math.random() / 200;
+            const xFactor = -50 + Math.random() * 100;
+            const yFactor = -50 + Math.random() * 100;
+            const zFactor = -50 + Math.random() * 100;
 
-            temp.push({ x, y, z, size, color });
+            const x = (Math.random() - 0.5) * width;
+            const y = (Math.random() - 0.5) * height;
+            // Ensure z is mostly negative to stay in front of camera if camera is at z=5
+            // But if we move camera to 50, this range is fine.
+            // Let's assume we will adjust camera or use a safe range.
+            const z = (Math.random() - 0.5) * 20;
+
+            const randomRadiusOffset = (Math.random() - 0.5) * 2;
+
+            temp.push({
+                t,
+                factor,
+                speed,
+                xFactor,
+                yFactor,
+                zFactor,
+                mx: x,
+                my: y,
+                mz: z,
+                cx: x,
+                cy: y,
+                cz: z,
+                vx: 0,
+                vy: 0,
+                vz: 0,
+                randomRadiusOffset
+            });
         }
         return temp;
-    }, [count, viewport]);
+    }, [count, viewport.width, viewport.height]);
+
+    useFrame((state) => {
+        const mesh = meshRef.current;
+        if (!mesh) return;
+
+        const { viewport: v, pointer: m } = state;
+
+        const mouseDist = Math.sqrt(Math.pow(m.x - lastMousePos.current.x, 2) + Math.pow(m.y - lastMousePos.current.y, 2));
+
+        if (mouseDist > 0.001) {
+            lastMouseMoveTime.current = Date.now();
+            lastMousePos.current = { x: m.x, y: m.y };
+        }
+
+        // Map normalized mouse coordinates (-1 to 1) to viewport units
+        let destX = (m.x * v.width) / 2;
+        let destY = (m.y * v.height) / 2;
+
+        if (state.pointer.x === 0 && state.pointer.y === 0 && Date.now() - lastMouseMoveTime.current > 2000) {
+            // Auto-animate if no mouse movement (or initial state)
+            const time = state.clock.getElapsedTime();
+            destX = Math.sin(time * 0.5) * (v.width / 4);
+            destY = Math.cos(time * 0.5 * 2) * (v.height / 4);
+        } else if (autoAnimate && Date.now() - lastMouseMoveTime.current > 2000) {
+            const time = state.clock.getElapsedTime();
+            destX = Math.sin(time * 0.5) * (v.width / 4);
+            destY = Math.cos(time * 0.5 * 2) * (v.height / 4);
+        }
+
+        const smoothFactor = 0.05;
+        virtualMouse.current.x += (destX - virtualMouse.current.x) * smoothFactor;
+        virtualMouse.current.y += (destY - virtualMouse.current.y) * smoothFactor;
+
+        const targetX = virtualMouse.current.x;
+        const targetY = virtualMouse.current.y;
+
+        const globalRotation = state.clock.getElapsedTime() * rotationSpeed;
+
+        particles.forEach((particle, i) => {
+            let { t, speed, mx, my, mz, cz, randomRadiusOffset } = particle;
+
+            t = particle.t += speed / 2;
+
+            const projectionFactor = 1 - cz / 50; // Perspective projection approx
+            const projectedTargetX = targetX * projectionFactor;
+            const projectedTargetY = targetY * projectionFactor;
+
+            const dx = mx - projectedTargetX;
+            const dy = my - projectedTargetY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            let targetPos = { x: mx, y: my, z: mz * depthFactor };
+
+            // Magnet effect
+            if (dist < magnetRadius) {
+                const angle = Math.atan2(dy, dx) + globalRotation;
+
+                const wave = Math.sin(t * waveSpeed + angle) * (0.5 * waveAmplitude);
+                const deviation = randomRadiusOffset * (5 / (fieldStrength + 0.1));
+
+                const currentRingRadius = ringRadius + wave + deviation;
+
+                targetPos.x = projectedTargetX + currentRingRadius * Math.cos(angle);
+                targetPos.y = projectedTargetY + currentRingRadius * Math.sin(angle);
+                targetPos.z = mz * depthFactor + Math.sin(t) * (1 * waveAmplitude * depthFactor);
+            }
+
+            particle.cx += (targetPos.x - particle.cx) * lerpSpeed;
+            particle.cy += (targetPos.y - particle.cy) * lerpSpeed;
+            particle.cz += (targetPos.z - particle.cz) * lerpSpeed;
+
+            dummy.position.set(particle.cx, particle.cy, particle.cz);
+
+            // Make particles look at the center/magnet
+            dummy.lookAt(projectedTargetX, projectedTargetY, particle.cz);
+
+            // Adjust rotation based on shape if needed
+            if (particleShape === 'capsule') {
+                dummy.rotateX(Math.PI / 2);
+            }
+
+            const currentDistToMouse = Math.sqrt(
+                Math.pow(particle.cx - projectedTargetX, 2) + Math.pow(particle.cy - projectedTargetY, 2)
+            );
+
+            const distFromRing = Math.abs(currentDistToMouse - ringRadius);
+            let scaleFactor = 1 - distFromRing / 10;
+
+            scaleFactor = Math.max(0, Math.min(1, scaleFactor));
+
+            // Pulse effect
+            const finalScale = scaleFactor * (0.8 + Math.sin(t * pulseSpeed) * 0.2 * particleVariance) * particleSize;
+            dummy.scale.set(finalScale, finalScale, finalScale);
+
+            dummy.updateMatrix();
+
+            mesh.setMatrixAt(i, dummy.matrix);
+        });
+
+        mesh.instanceMatrix.needsUpdate = true;
+    });
 
     return (
-        <group>
-            <ambientLight intensity={0.2} />
-            <pointLight position={[10, 10, 10]} intensity={1} />
-            {particles.map((data, i) => (
-                <Particle key={i} {...data} />
-            ))}
-        </group>
+        <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
+            {particleShape === 'capsule' && <capsuleGeometry args={[0.05, 0.3, 4, 8]} />}
+            {particleShape === 'sphere' && <sphereGeometry args={[0.15, 16, 16]} />}
+            {particleShape === 'box' && <boxGeometry args={[0.2, 0.2, 0.2]} />}
+            <meshStandardMaterial
+                color={color}
+                emissive={color}
+                emissiveIntensity={0.8}
+                toneMapped={false}
+                transparent
+                opacity={0.9}
+            />
+        </instancedMesh>
     );
 };
 
