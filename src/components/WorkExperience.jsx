@@ -37,7 +37,7 @@ const WorkExperience = () => {
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,
-        offset: ["start end", "end center"]
+        offset: ["start 0.7", "end 0.3"]
     });
 
     // Transform scroll progress to height for the line
@@ -87,7 +87,7 @@ const TimelineItem = ({ data, index }) => {
                 <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
-                    viewport={{ margin: "-100px" }}
+                    viewport={{ once: true, margin: "-30% 0px -20% 0px" }}
                     className="w-full h-full bg-primary rounded-full"
                 />
             </div>
@@ -96,8 +96,8 @@ const TimelineItem = ({ data, index }) => {
             <motion.div
                 initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-30% 0px -20% 0px" }}
+                transition={{ duration: 0.7, type: "spring", bounce: 0.3, delay: index * 0.1 }}
                 className="w-full md:w-5/12 p-6 bg-secondary/80 backdrop-blur-sm border border-white/5 rounded-2xl hover:border-primary/30 transition-all hover:-translate-y-1 hover:shadow-xl"
             >
                 <span className="text-primary font-mono text-sm mb-2 block">{data.year}</span>

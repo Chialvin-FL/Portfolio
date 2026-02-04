@@ -6,7 +6,7 @@ import Antigravity from './Antigravity';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* 3D Animation removed from here, now handled globally in Background.jsx */}
 
             <div className="container mx-auto px-6 relative z-10 text-center pointer-events-none">
