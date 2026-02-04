@@ -77,10 +77,22 @@ const WorkExperience = () => {
                     {/* Central Line Background (Dark) */}
                     <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-slate-800 -translate-x-1/2 rounded-full" />
 
-                    {/* Moving Line (Primary Color) */}
+                    {/* Moving Line (Primary Color) with Shimmer */}
                     <motion.div
-                        style={{ height: lineHeight }}
-                        className="absolute left-1/2 top-0 w-1 bg-gradient-to-b from-primary to-indigo-500 -translate-x-1/2 rounded-full origin-top shadow-[0_0_15px_rgba(14,165,233,0.6)]"
+                        style={{
+                            height: lineHeight,
+                            backgroundImage: "linear-gradient(to bottom, #0ea5e9 0%, #0ea5e9 40%, #ffffff 50%, #6366f1 60%, #6366f1 100%)",
+                            backgroundSize: "100% 300%"
+                        }}
+                        animate={{
+                            backgroundPositionY: ["0%", "100%"]
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
+                        className="absolute left-1/2 top-0 w-1 -translate-x-1/2 rounded-full origin-top shadow-[0_0_25px_rgba(255,255,255,0.9),0_0_15px_rgba(14,165,233,0.6)]"
                     />
 
                     <div className="space-y-12">
