@@ -56,7 +56,7 @@ const FeaturedWorks = () => {
 
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
     };
 
     return (
@@ -73,11 +73,18 @@ const FeaturedWorks = () => {
                     <motion.h3 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white">Featured Works</motion.h3>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    variants={containerVariants}
+                    className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+                >
                     {projects.map((project) => (
                         <motion.div
                             layoutId={project.id}
                             key={project.id}
+                            variants={itemVariants}
                             onClick={() => setSelectedId(project.id)}
                             className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-video bg-secondary border border-white/5 hover:border-primary/50 transition-all"
                             whileHover={{ scale: 1.02 }}
@@ -110,7 +117,7 @@ const FeaturedWorks = () => {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
                 <AnimatePresence>
                     {selectedId && (

@@ -80,15 +80,21 @@ const TechStack = () => {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
                     variants={containerVariants}
+                    className="text-center mb-16"
                 >
-                    <div className="text-center mb-16">
-                        <motion.h2 variants={itemVariants} className="text-primary text-sm font-bold uppercase tracking-widest mb-2">Expertise</motion.h2>
-                        <motion.h3 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white">Technology Stack</motion.h3>
-                        <motion.p variants={itemVariants} className="mt-4 text-slate-400 max-w-2xl mx-auto">
-                            A comprehensive toolkit for building high-performance, scalable applications across platforms.
-                        </motion.p>
-                    </div>
+                    <motion.h2 variants={itemVariants} className="text-primary text-sm font-bold uppercase tracking-widest mb-2">Expertise</motion.h2>
+                    <motion.h3 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white">Technology Stack</motion.h3>
+                    <motion.p variants={itemVariants} className="mt-4 text-slate-400 max-w-2xl mx-auto">
+                        A comprehensive toolkit for building high-performance, scalable applications across platforms.
+                    </motion.p>
+                </motion.div>
 
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    variants={containerVariants}
+                >
                     <MagicBento
                         items={techStackData}
                         textAutoHide={false}
