@@ -1,42 +1,32 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import Antigravity from './Antigravity';
 
 const Hero = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark">
-            {/* Background Animated Gradient Blobs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] bg-primary/20 rounded-full blur-[120px]"
-                    animate={{
-                        x: [0, 50, 0],
-                        y: [0, 30, 0],
-                    }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                    className="absolute top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-indigo-600/20 rounded-full blur-[120px]"
-                    animate={{
-                        x: [0, -50, 0],
-                        y: [0, 40, 0],
-                    }}
-                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                />
-                <motion.div
-                    className="absolute -bottom-[20%] left-[20%] w-[50vw] h-[50vw] bg-purple-600/10 rounded-full blur-[120px]"
-                    animate={{
-                        x: [0, 30, 0],
-                        y: [0, -30, 0],
-                    }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                />
+            {/* Background 3D Animation */}
+            <div className="absolute inset-0 z-0">
+                <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+                    <Suspense fallback={null}>
+                        <Antigravity count={150} />
+                        {/* Optional: Add orbit controls if interaction is desired, but disable zoom/pan for background */}
+                        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
+                    </Suspense>
+                </Canvas>
             </div>
 
-            <div className="container mx-auto px-6 relative z-10 text-center">
+            {/* Gradient overlay for better text readability */}
+            <div className="absolute inset-0 bg-dark/40 pointer-events-none z-0" />
+
+            <div className="container mx-auto px-6 relative z-10 text-center pointer-events-none">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "out" }}
+                    className="pointer-events-auto"
                 >
                     <h2 className="text-primary font-medium tracking-wider mb-4 uppercase">
                         Creative Software Duo
@@ -87,7 +77,7 @@ const Hero = () => {
 
             {/* Scroll Indicator */}
             <motion.div
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
             >
