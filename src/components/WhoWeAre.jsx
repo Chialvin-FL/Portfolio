@@ -72,7 +72,7 @@ const WhoWeAre = () => {
                         </motion.p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-12 lg:gap-24 justify-items-center">
+                    <div className="grid md:grid-cols-2 gap-4 justify-items-center max-w-5xl mx-auto">
                         {team.map((member, index) => (
                             <motion.div key={index} variants={itemVariants}>
                                 <ProfileCard
