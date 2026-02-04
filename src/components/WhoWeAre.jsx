@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Server, Database, Globe } from 'lucide-react';
+import ProfileCard from './ProfileCard';
 
 const WhoWeAre = () => {
     const containerVariants = {
@@ -18,67 +18,88 @@ const WhoWeAre = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
     };
 
+    const team = [
+        {
+            name: "Javi A. Torres",
+            roleTitle: "The Architect",
+            tagline: "Frontend Specialist",
+            description: "Translating complex visions into interactive, responsive, and beautiful user interfaces. Obsessed with animations, accessibility, and user experience.",
+            bulletPoints: [
+                "React & Next.js Ecosystem",
+                "Advanced Animations (GSAP, Framer)",
+                "UI/UX Architecture"
+            ],
+            handle: "javicodes",
+            status: "Online",
+            avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+            contactText: "Contact Me",
+            behindGlowColor: "rgba(14, 165, 233, 0.4)"
+        },
+        {
+            name: "Elena V. Smith",
+            roleTitle: "The Engineer",
+            tagline: "Backend Specialist",
+            description: "Building the robust foundations that power applications. Scalable architectures, secure APIs, and high-performance database management.",
+            bulletPoints: [
+                "Scalable API Design",
+                "Database Architecture",
+                "Cloud Infrastructure"
+            ],
+            handle: "elenadev",
+            status: "In a meeting",
+            avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
+            contactText: "Let's Talk",
+            behindGlowColor: "rgba(99, 102, 241, 0.4)"
+        }
+    ];
+
     return (
         <section id="who-we-are" className="py-24 relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     variants={containerVariants}
-                    className="max-w-4xl mx-auto"
+                    className="max-w-6xl mx-auto"
                 >
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-20">
                         <motion.h2 variants={itemVariants} className="text-primary text-sm font-bold uppercase tracking-widest mb-2">The Team</motion.h2>
-                        <motion.h3 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white mb-6">Who We Are</motion.h3>
-                        <motion.p variants={itemVariants} className="text-slate-400 text-lg leading-relaxed">
-                            We are a synchronized duo bridging the gap between design and functionality.
-                            While one masters the pixel-perfect frontend, the other engineers the invincible backend.
+                        <motion.h3 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white mb-6">Creative Duo</motion.h3>
+                        <motion.p variants={itemVariants} className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
+                            A synchronized team bridging the gap between design and functionality.
+                            We build high-performance applications with a focus on user experience and robust architecture.
                         </motion.p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-12">
-                        {/* Frontend Developer Card */}
-                        <motion.div
-                            variants={itemVariants}
-                            className="bg-dark/50 p-8 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group"
-                        >
-                            <div className="w-16 h-16 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
-                                <Globe className="text-white" size={32} />
-                            </div>
-                            <h4 className="text-2xl font-bold text-white mb-2">The Architect</h4>
-                            <p className="text-primary font-medium mb-4">Frontend Specialist</p>
-                            <p className="text-slate-400 mb-6">
-                                Translating complex visions into interactive, responsive, and beautiful user interfaces.
-                                Obsessed with animations, accessibility, and user experience.
-                            </p>
-                            <ul className="space-y-2 text-slate-300">
-                                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> React & Next.js Ecosystem</li>
-                                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Advanced Animations (GSAP, Framer)</li>
-                                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> UI/UX Architecture</li>
-                            </ul>
-                        </motion.div>
-
-                        {/* Backend Developer Card */}
-                        <motion.div
-                            variants={itemVariants}
-                            className="bg-dark/50 p-8 rounded-2xl border border-white/5 hover:border-indigo-500/50 transition-colors group"
-                        >
-                            <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/20 group-hover:scale-110 transition-transform">
-                                <Server className="text-white" size={32} />
-                            </div>
-                            <h4 className="text-2xl font-bold text-white mb-2">The Engineer</h4>
-                            <p className="text-indigo-400 font-medium mb-4">Backend Specialist</p>
-                            <p className="text-slate-400 mb-6">
-                                Building the robust foundations that power applications. Scalable architectures,
-                                secure APIs, and high-performance database management.
-                            </p>
-                            <ul className="space-y-2 text-slate-300">
-                                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-indigo-500 rounded-full" /> Scalable API Design</li>
-                                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-indigo-500 rounded-full" /> Database Architecture</li>
-                                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-indigo-500 rounded-full" /> Cloud Infrastructure</li>
-                            </ul>
-                        </motion.div>
+                    <div className="grid md:grid-cols-2 gap-12 lg:gap-24 justify-items-center">
+                        {team.map((member, index) => (
+                            <motion.div key={index} variants={itemVariants}>
+                                <ProfileCard
+                                    name={member.name}
+                                    title={member.tagline}
+                                    roleTitle={member.roleTitle}
+                                    tagline={member.tagline}
+                                    description={member.description}
+                                    bulletPoints={member.bulletPoints}
+                                    handle={member.handle}
+                                    status={member.status}
+                                    avatarUrl={member.avatarUrl}
+                                    contactText={member.contactText}
+                                    showUserInfo
+                                    enableTilt={true}
+                                    enableMobileTilt={false}
+                                    showBehindGlow
+                                    behindGlowColor={member.behindGlowColor}
+                                    onContactClick={() => {
+                                        const element = document.querySelector('#contact');
+                                        if (element) {
+                                            element.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }}
+                                />
+                            </motion.div>
+                        ))}
                     </div>
                 </motion.div>
             </div>

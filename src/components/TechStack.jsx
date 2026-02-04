@@ -1,66 +1,85 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import MagicBento from './MagicBento';
+import {
+    Code2,
+    Globe,
+    Server,
+    Terminal,
+    Cpu,
+    Database,
+    GitBranch
+} from 'lucide-react';
 
-const techStack = {
-    "PROGRAMMING": [
-        "C", "C# Core Web API", "C# GUI", "Java", "JavaScript", "PHP", "Kotlin", "Assembly", "Python"
-    ],
-    "WEB DEVELOPMENT": [
-        "HTML/CSS", "Tailwind", "jQuery", "React", "Vite", "React Native", "ASP.NET", "MVC",
-        "MVVM", "Laravel", "Swagger API", "Figma", "AntDesign"
-    ],
-    "BACKEND & TOOLS": [
-        "LINQ", "Refit", "Axios", "Redux", "Node.js", "FastAPI", "Firebase", "MySQL", "MongoDB", "PostgreSQL", "Cloudinary"
-    ],
-    "DEVOPS & DEPLOYMENT": [
-        "IIS", "Cloudflare", "Nginx", "Google Cloud"
-    ],
-    "INTEGRATIONS": [
-        "Google Maps API", "Google AI Studio (AI/ML integrations)", "MQTT", "PayMongo", "Stripe", "Twilio"
-    ],
-    "AI & MACHINE LEARNING": [
-        "OpenCV", "TensorFlow/Keras", "HuggingFace Transformers", "AI/Machine Learning"
-    ],
-    "VERSION CONTROL": [
-        "GitHub"
-    ]
-};
+const techStackData = [
+    {
+        title: 'Programming',
+        label: 'Core',
+        description: 'C, C#, Java, JavaScript, PHP, Kotlin, Assembly, Python',
+        icon: <Terminal size={20} />,
+        color: 'rgba(2, 6, 23, 0.5)'
+    },
+    {
+        title: 'Web Dev',
+        label: 'Frontend',
+        description: 'React, Vite, Tailwind, HTML/CSS, ASP.NET, Laravel, Figma',
+        icon: <Globe size={20} />,
+        color: 'rgba(2, 6, 23, 0.5)'
+    },
+    {
+        title: 'AI & ML',
+        label: 'Intelligence',
+        description: 'OpenCV, TensorFlow, Keras, HuggingFace, Transformers',
+        icon: <Cpu size={20} />,
+        color: 'rgba(2, 6, 23, 0.5)'
+    },
+    {
+        title: 'Backend & Tools',
+        label: 'Infrastructure',
+        description: 'Node.js, FastAPI, Firebase, MySQL, MongoDB, PostgreSQL',
+        icon: <Server size={20} />,
+        color: 'rgba(2, 6, 23, 0.5)'
+    },
+    {
+        title: 'DevOps',
+        label: 'Deployment',
+        description: 'IIS, Cloudflare, Nginx, Google Cloud Platform',
+        icon: <Code2 size={20} />,
+        color: 'rgba(2, 6, 23, 0.5)'
+    },
+    {
+        title: 'Version Control',
+        label: 'Collaboration',
+        description: 'GitHub, Git, Project Management',
+        icon: <GitBranch size={20} />,
+        color: 'rgba(2, 6, 23, 0.5)'
+    }
+];
 
 const TechStack = () => {
     return (
-        <section id="tech-stack" className="py-24">
+        <section id="tech-stack" className="py-24 relative z-10">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-primary text-sm font-bold uppercase tracking-widest mb-2">Expertise</h2>
                     <h3 className="text-4xl md:text-5xl font-bold text-white">Technology Stack</h3>
+                    <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
+                        A comprehensive toolkit for building high-performance, scalable applications across platforms.
+                    </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {Object.entries(techStack).map(([category, skills], index) => (
-                        <motion.div
-                            key={category}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
-                            viewport={{ once: true }}
-                            className="bg-dark/50 p-6 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors h-full"
-                        >
-                            <h4 className="text-xl font-bold text-white mb-6 border-b border-primary/20 pb-2 inline-block">
-                                {category}
-                            </h4>
-                            <div className="flex flex-wrap gap-3">
-                                {skills.map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="px-3 py-1.5 bg-slate-800/50 hover:bg-primary/20 text-slate-300 hover:text-white rounded-lg text-sm transition-all duration-300 border border-white/5 hover:border-primary/50"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+                <MagicBento
+                    items={techStackData}
+                    textAutoHide={false}
+                    enableStars={true}
+                    enableSpotlight={true}
+                    enableBorderGlow={true}
+                    enableTilt={true}
+                    enableMagnetism={true}
+                    clickEffect={true}
+                    spotlightRadius={400}
+                    particleCount={15}
+                    glowColor="14, 165, 233" // Primary Sky Blue
+                />
             </div>
         </section>
     );
