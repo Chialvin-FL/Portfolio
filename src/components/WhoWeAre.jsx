@@ -32,7 +32,7 @@ const WhoWeAre = () => {
                 "Database Architecture",
                 "Cloud Infrastructure"
             ],
-            handle: "alvin",
+            handle: "Alvin John",
             status: "Online",
             avatarUrl: alvinImg,
             contactText: "Contact Me",
@@ -48,7 +48,7 @@ const WhoWeAre = () => {
                 "UI Performance Optimization",
                 "User Experience Engineering"
             ],
-            handle: "chiara",
+            handle: "Chiara Canque",
             status: "Online",
             avatarUrl: chiaraImg,
             contactText: "Let's Talk",
@@ -69,9 +69,8 @@ const WhoWeAre = () => {
                     <div className="text-center mb-20">
                         <motion.h2 variants={itemVariants} className="text-primary text-sm font-bold uppercase tracking-widest mb-2">The Team</motion.h2>
                         <motion.h3 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white mb-6">Creative Duo</motion.h3>
-                        <motion.p variants={itemVariants} className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
-                            A synchronized team bridging the gap between design and functionality.
-                            We build high-performance applications with a focus on user experience and robust architecture.
+                        <motion.p variants={itemVariants} className="text-slate-400 text-lg leading-relaxed max-w-4xl mx-auto px-4">
+                            A synchronized team of BSIT graduates bridging the gap between design and functionality. We build high-performance applications with a strong focus on user experience, optimization, and robust system architecture.
                         </motion.p>
                     </div>
 

@@ -364,7 +364,7 @@ const ProfileCardComponent = ({
                                             />
                                         </div>
                                         <div className="pc-user-text">
-                                            <div className="pc-handle">@{handle}</div>
+                                            <div className="pc-handle">{handle}</div>
                                         </div>
                                     </div>
                                     <button
