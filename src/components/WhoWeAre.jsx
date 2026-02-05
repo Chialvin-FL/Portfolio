@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProfileCard from './ProfileCard';
+import alvinImg from '../assets/alvin.jpg';
+import chiaraImg from '../assets/chiara.png';
+
 
 const WhoWeAre = () => {
     const containerVariants = {
@@ -20,34 +23,34 @@ const WhoWeAre = () => {
 
     const team = [
         {
-            name: "Javi A. Torres",
-            roleTitle: "The Architect",
-            tagline: "Frontend Specialist",
-            description: "Translating complex visions into interactive, responsive, and beautiful user interfaces. Obsessed with animations, accessibility, and user experience.",
-            bulletPoints: [
-                "React & Next.js Ecosystem",
-                "Advanced Animations (GSAP, Framer)",
-                "UI/UX Architecture"
-            ],
-            handle: "javicodes",
-            status: "Online",
-            avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-            contactText: "Contact Me",
-            behindGlowColor: "rgba(14, 165, 233, 0.4)"
-        },
-        {
-            name: "Elena V. Smith",
+            name: "Alvin",
             roleTitle: "The Engineer",
-            tagline: "Backend Specialist",
+            tagline: "Backend Developer",
             description: "Building the robust foundations that power applications. Scalable architectures, secure APIs, and high-performance database management.",
             bulletPoints: [
                 "Scalable API Design",
                 "Database Architecture",
                 "Cloud Infrastructure"
             ],
-            handle: "elenadev",
-            status: "In a meeting",
-            avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
+            handle: "alvin",
+            status: "Online",
+            avatarUrl: alvinImg,
+            contactText: "Contact Me",
+            behindGlowColor: "rgba(14, 165, 233, 0.4)"
+        },
+        {
+            name: "Chiara",
+            roleTitle: "The Designer",
+            tagline: "Frontend Developer",
+            description: "Optimizing user interfaces for speed, accessibility, and seamless user experience. Focused on performance, smooth interactions, and building interfaces that feel effortless to use.",
+            bulletPoints: [
+                "Scalable UI Designs",
+                "UI Performance Optimization",
+                "User Experience Engineering"
+            ],
+            handle: "chiara",
+            status: "Online",
+            avatarUrl: chiaraImg,
             contactText: "Let's Talk",
             behindGlowColor: "rgba(99, 102, 241, 0.4)"
         }
