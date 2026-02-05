@@ -1,7 +1,5 @@
-import React, { useMemo, Suspense } from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import Antigravity from './Antigravity';
 
 const Background = () => {
     // Generate 30 random blobs spread vertically
@@ -31,15 +29,6 @@ const Background = () => {
 
     return (
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-dark bg-gradient-to-b from-dark via-secondary/20 to-dark">
-            {/* Global 3D Particle Animation - Sticky to stay in viewport while scrolling */}
-            <div className="sticky top-0 h-screen w-full z-0 opacity-40">
-                <Canvas camera={{ position: [0, 0, 35], fov: 40 }}>
-                    <Suspense fallback={null}>
-                        <Antigravity count={300} />
-                    </Suspense>
-                </Canvas>
-            </div>
-
             {/* Vertically distributed blobs */}
             <div className="absolute inset-0 z-0">
                 {blobs.map((blob) => (

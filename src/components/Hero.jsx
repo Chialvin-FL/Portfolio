@@ -7,14 +7,20 @@ import Antigravity from './Antigravity';
 const Hero = () => {
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* 3D Animation removed from here, now handled globally in Background.jsx */}
+            {/* 3D Particle Animation - Local to Hero section with cursor detection */}
+            <div className="absolute inset-0 z-0 opacity-40 pointer-events-auto">
+                <Canvas camera={{ position: [0, 0, 35], fov: 40 }}>
+                    <Suspense fallback={null}>
+                        <Antigravity count={300} />
+                    </Suspense>
+                </Canvas>
+            </div>
 
             <div className="container mx-auto px-6 relative z-10 text-center pointer-events-none">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "out" }}
-                    className="pointer-events-auto"
                 >
                     <h2 className="text-primary font-medium tracking-wider mb-4 uppercase">
                         Creative Software Duo
@@ -49,13 +55,13 @@ const Hero = () => {
                     >
                         <a
                             href="#featured-works"
-                            className="px-8 py-4 bg-white text-dark font-bold rounded-full hover:bg-slate-200 transition-all hover:scale-105"
+                            className="px-8 py-4 bg-white text-dark font-bold rounded-full hover:bg-slate-200 transition-all hover:scale-105 pointer-events-auto"
                         >
                             View Our Work
                         </a>
                         <a
                             href="#contact"
-                            className="px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-all hover:scale-105 backdrop-blur-sm"
+                            className="px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-all hover:scale-105 backdrop-blur-sm pointer-events-auto"
                         >
                             Contact Us
                         </a>

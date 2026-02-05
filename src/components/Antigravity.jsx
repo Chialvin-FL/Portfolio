@@ -5,10 +5,10 @@ import * as THREE from 'three';
 const Antigravity = ({
     count = 300,
     magnetRadius = 10,
-    ringRadius = 10,
+    ringRadius = 7,
     waveSpeed = 0.4,
     waveAmplitude = 1,
-    particleSize = 0.7,
+    particleSize = 0.8,
     lerpSpeed = 0.1,
     color = '#0ea5e9', // Primary sky-blue color
     autoAnimate = false,
@@ -88,12 +88,9 @@ const Antigravity = ({
         let destX = (m.x * v.width) / 2;
         let destY = (m.y * v.height) / 2;
 
-        if (state.pointer.x === 0 && state.pointer.y === 0 && Date.now() - lastMouseMoveTime.current > 2000) {
-            // Auto-animate if no mouse movement (or initial state)
-            const time = state.clock.getElapsedTime();
-            destX = Math.sin(time * 0.5) * (v.width / 4);
-            destY = Math.cos(time * 0.5 * 2) * (v.height / 4);
-        } else if (autoAnimate && Date.now() - lastMouseMoveTime.current > 2000) {
+        // Auto-animate if cursor hasn't moved for 2 seconds
+        const timeSinceLastMove = Date.now() - lastMouseMoveTime.current;
+        if (timeSinceLastMove > 2000) {
             const time = state.clock.getElapsedTime();
             destX = Math.sin(time * 0.5) * (v.width / 4);
             destY = Math.cos(time * 0.5 * 2) * (v.height / 4);
