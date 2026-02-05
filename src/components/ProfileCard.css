@@ -75,8 +75,9 @@
 .pc-card:hover,
 .pc-card.active {
     transition: none;
-    transform: translateZ(0) rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
+    transform: translateZ(0) rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
 }
+
 
 .pc-card-shell.entering .pc-card {
     transition: transform 180ms ease-out;
