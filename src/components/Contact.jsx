@@ -16,6 +16,7 @@ const Contact = () => {
                         className="lg:w-1/2"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-primary text-sm font-bold uppercase tracking-widest mb-2">Get In Touch</h2>
@@ -53,6 +54,7 @@ const Contact = () => {
                         className="lg:w-1/2"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <form className="bg-secondary p-8 rounded-3xl border border-white/5 space-y-6">

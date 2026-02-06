@@ -1,29 +1,80 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Calendar } from 'lucide-react';
+import hackathon0 from '../assets/Hackathon_0.jpg';
+import hackathon1 from '../assets/Hackathon_1.jpg';
+import hackathon2 from '../assets/Hackathon_2.jpg';
+import agentic from '../assets/Agentic.jpg';
+import quizbowl from '../assets/quiz_bowl.jpg'
+import calict from '../assets/cal_ict.jpg'
+import webpage from '../assets/webpage_design.jpg'
+import science from '../assets/science.jpg'
+import pc from '../assets/pc_assembly.jpg'
 
 const awards = [
     {
-        title: "Global AI Hackathon 2024",
-        award: "1st Place Winner",
-        image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        title: "Ready Tensor Agentic AI Competition",
+        award: "Participant",
+        image: agentic,
+        description: "Smart energy monitoring dashboard for household appliances.",
+        date: "February 2025"
+    },
+    {
+        title: "CIB.O Cebu Interschool Hackathon",
+        award: "2nd Place Education Category",
+        image: hackathon2,
         description: "Developed an autonomous drone delivery system routing algorithm.",
+        date: "June 2024"
+    },
+    {
+        title: "UC ICT Congress Intercampus Hackathon",
+        award: "Special Awards",
+        image: hackathon1,
+        description: "Created a simplified investment platform for Gen Z users.",
+        date: "April 2024"
+    },
+    {
+        title: "UC-Banilad CCS Days UI/UX Design Contest",
+        award: "2nd Place",
+        image: hackathon0,
+        description: "Smart energy monitoring dashboard for household appliances.",
         date: "March 2024"
     },
     {
-        title: "FinTech Innovation Challenge",
-        award: "Best UX Design",
-        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        description: "Created a simplified investment platform for Gen Z users.",
-        date: "November 2023"
+        title: "Intercampus Java Quiz Bowl",
+        award: "2nd Place",
+        image: quizbowl,
+        description: "Smart energy monitoring dashboard for household appliances.",
+        date: "March 2023"
     },
     {
-        title: "Green Tech Summit",
-        award: "Audience Choice Award",
-        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        title: "CAL ICT Champions Quiz Bowl",
+        award: "Participant",
+        image: calict,
         description: "Smart energy monitoring dashboard for household appliances.",
-        date: "August 2023"
-    }
+        date: "2018"
+    },
+    {
+        title: "Intercampus Webpage Designing",
+        award: "2nd Place",
+        image: webpage,
+        description: "Smart energy monitoring dashboard for household appliances.",
+        date: "2017"
+    },
+    {
+        title: "Interschool Science Investigatory Project",
+        award: "2nd Place",
+        image: science,
+        description: "Smart energy monitoring dashboard for household appliances.",
+        date: "2017"
+    },
+    {
+        title: "Intercampus PC Assembly/Disassembly, Configuration, Troubleshoot & Networking",
+        award: "2nd Place",
+        image: pc,
+        description: "Smart energy monitoring dashboard for household appliances.",
+        date: "2016"
+    },
 ];
 
 const Hackathons = () => {
@@ -70,6 +121,7 @@ const Hackathons = () => {
                             key={index}
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.2 }}
                             className="group relative flex flex-col md:flex-row gap-8 items-center bg-secondary/30 rounded-3xl p-6 border border-white/5 hover:border-primary/30 hover:bg-secondary/50 transition-all"
                         >

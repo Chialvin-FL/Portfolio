@@ -12,7 +12,7 @@ const testimonials = [
     {
         id: 1,
         name: "KuwaGo Team",
-        role: "FinTech Masterals",
+        role: "FinTech Masteral Capstone",
         content: "We were impressed by the system’s performance and responsiveness. Advanced features were implemented seamlessly, and the interface is intuitive and easy to use. All our requirements were delivered with precision.",
         image: KuwaGo,
         bgImage: KuwaGo
@@ -20,7 +20,7 @@ const testimonials = [
     {
         id: 2,
         name: "MiManuTMS",
-        role: "FinTech Masterals",
+        role: "FinTech Masteral Capstone",
         content: "They handled complex functionalities with ease and transformed them into a fast, reliable, and user-friendly platform. The workflow is smooth, the UI/UX feels natural, and every requirement was met exactly as expected.",
         image: MiManu,
         bgImage: MiManu
@@ -28,7 +28,7 @@ const testimonials = [
     {
         id: 3,
         name: "TrabaHub",
-        role: "FinTech Masterals",
+        role: "FinTech Masteral Capstone",
         content: "The application runs efficiently with optimized performance and well-executed advanced features. The interface is clean, intuitive, and easy for users to navigate. Overall satisfaction from us has been outstanding.",
         image: TrabaHub,
         bgImage: TrabaHub
@@ -36,7 +36,7 @@ const testimonials = [
     {
         id: 4,
         name: "City Veterinary Office",
-        role: "Senior High School",
+        role: "Senior High School Capstone",
         content: "The system streamlined our daily operations and made record management faster and more organized. It’s reliable, easy to use, and has greatly improved how we serve the community.",
         image: CVO,
         bgImage: CVO
@@ -44,7 +44,7 @@ const testimonials = [
     {
         id: 5,
         name: "Soothera",
-        role: "FinTech Masterals",
+        role: "FinTech Masteral Capstone",
         content: "The platform strengthened our workflow with stable performance and smart features. It helped businesses operate more efficiently while providing a smooth and intuitive experience for our users.",
         image: Soothera,
         bgImage: Soothera
