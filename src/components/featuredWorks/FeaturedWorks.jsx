@@ -8,6 +8,8 @@ import kuwago from '../../assets/featuredWorks/kuwago.png';
 import kuwago2 from '../../assets/featuredWorks/kuwago2.png';
 import iot from '../../assets/featuredWorks/iot.png';
 import iot2 from '../../assets/featuredWorks/iot2.png';
+import lgu from '../../assets/featuredWorks/lgu.png';
+import lgu2 from '../../assets/featuredWorks/lgu2.png';
 
 const projects = [
     {
@@ -95,8 +97,8 @@ const projects = [
         id: 10,
         title: "Municipal LGU-LCR Records Management System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        image: lgu,
+        video: lgu2,
         description: "A digital records management system for local government civil registry offices, organizing birth, marriage, and death records with secure access and retrieval.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
     },
