@@ -5,41 +5,114 @@ import { X, ExternalLink, Github, Play } from 'lucide-react';
 const projects = [
     {
         id: 1,
-        title: "E-Commerce Dashboard",
-        category: "Web Application",
+        title: "Salon Services Booking Platform",
+        category: "Cross-Platform Application",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-97-large.mp4", // Placeholder
-        description: "A comprehensive dashboard for managing online stores. Features real-time analytics, inventory management, and order processing.",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-97-large.mp4",
+        description: "A cross-platform booking system for salons that streamlines appointment scheduling, service management, staff availability, and customer notifications in one intuitive interface.",
         tech: ["React", "Node.js", "PostgreSQL", "Tailwind"],
     },
     {
         id: 2,
-        title: "Social Media Analytics",
-        category: "Data Visualization",
+        title: "Hybrid P2B Lending Platform System",
+        category: "Web Application",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-monitor-close-up-1728-large.mp4", // Placeholder
-        description: "Visualizing complex social media data into actionable insights using D3.js and Python backend.",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-monitor-close-up-1728-large.mp4",
+        description: "A secure lending platform connecting private lenders and businesses, featuring loan tracking, approval workflows, repayment monitoring, and financial dashboards.",
         tech: ["Python", "Django", "D3.js", "Redis"],
     },
     {
         id: 3,
-        title: "Health Tracker App",
-        category: "Mobile Application",
+        title: "Training Management System",
+        category: "Web Application",
         image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-red-and-blue-digital-technology-connection-1718-large.mp4", // Placeholder
-        description: "Cross-platform mobile app for tracking fitness goals, nutrition, and sleep patterns.",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-red-and-blue-digital-technology-connection-1718-large.mp4",
+        description: "A centralized platform for managing employee or student training programs, tracking progress, attendance, certifications, and performance evaluations.",
         tech: ["React Native", "Firebase", "HealthKit"],
     },
     {
         id: 4,
-        title: "AI Content Generator",
+        title: "Veterinary Services Information and Assistance System",
         category: "SaaS Platform",
         image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4", // Placeholder
-        description: "AI-powered tool helping marketers generate blog posts, captions, and ad copy in seconds.",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        description: "A digital system for managing veterinary records, patient history, appointment scheduling, and public service information for efficient clinic operations.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
     },
-];
+    {
+        id: 5,
+        title: "Mental Healthcare Facility Provider and Assistant Application",
+        category: "Cross-Platform Application",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        description: "A mental health support platform that connects patients with providers, manages consultations, tracks progress, and offers digital assistance tools for care management.",
+        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+    },
+    {
+        id: 6,
+        title: "AI-Powered Water Delivery System",
+        category: "Mobile Application",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        description: "An intelligent delivery management app that automates scheduling, optimizes routes, predicts demand, and coordinates drivers for efficient water distribution.",
+        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+    },
+    {
+        id: 7,
+        title: "Web-Based POS System",
+        category: "Web Application",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        description: "A browser-based point-of-sale system for handling transactions, managing products, tracking sales, and generating financial reports in real time.",
+        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+    },
+    {
+        id: 8,
+        title: "Booking & Reservation System",
+        category: "Web Application",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        description: "A flexible reservation platform for managing bookings, customer details, schedules, and availability for service-based businesses.",
+        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+    },
+    {
+        id: 9,
+        title: "IoT Building Management System",
+        category: "Web Application",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        description: "An IoT-integrated platform for monitoring and controlling building utilities such as lighting, temperature, and energy usage through real-time dashboards.",
+        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+    },
+    {
+        id: 10,
+        title: "Municipal LGU-LCR Records Management System",
+        category: "Web Application",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        description: "A digital records management system for local government civil registry offices, organizing birth, marriage, and death records with secure access and retrieval.",
+        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+    },
+    {
+        id: 11,
+        title: "POS Inventory and Manufacturing System",
+        category: "Web Application",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        description: "An integrated system that connects point-of-sale operations with inventory tracking and manufacturing workflows for better stock and production management.",
+        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+    },
+    {
+        id: 12,
+        title: "Personal Finance Management Application",
+        category: "Mobile Application",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        description: "A mobile app for tracking income, expenses, savings, and budgets, helping users manage their finances with clear insights and spending analytics.",
+        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+    },
+]
+
 
 const FeaturedWorks = () => {
     const [selectedId, setSelectedId] = useState(null);
@@ -73,18 +146,15 @@ const FeaturedWorks = () => {
                     <motion.h3 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white">Featured Works</motion.h3>
                 </motion.div>
 
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.1 }}
-                    variants={containerVariants}
-                    className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
-                >
-                    {projects.map((project) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    {projects.map((project, index) => (
                         <motion.div
                             layoutId={project.id}
                             key={project.id}
-                            variants={itemVariants}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: (index % 3) * 0.1 }}
                             onClick={() => setSelectedId(project.id)}
                             className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-video bg-secondary border border-white/5 hover:border-primary/50 transition-all"
                             whileHover={{ scale: 1.02 }}
@@ -117,7 +187,7 @@ const FeaturedWorks = () => {
                             </div>
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
 
                 <AnimatePresence>
                     {selectedId && (

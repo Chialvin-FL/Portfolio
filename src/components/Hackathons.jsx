@@ -57,7 +57,7 @@ const Hackathons = () => {
                 >
                     <div>
                         <motion.h2 variants={itemVariants} className="text-primary text-sm font-bold uppercase tracking-widest mb-2">Achievements</motion.h2>
-                        <motion.h3 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white">Hackathon Awards</motion.h3>
+                        <motion.h3 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white">Awards and Certifications</motion.h3>
                     </div>
                     <motion.p variants={itemVariants} className="text-slate-400 mt-4 md:mt-0 max-w-md text-right md:text-right text-left">
                         Competing against the best minds to solve real-world problems under pressure.
