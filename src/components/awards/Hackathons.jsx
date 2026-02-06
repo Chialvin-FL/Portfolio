@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Calendar } from 'lucide-react';
-import hackathon0 from '../assets/Hackathon_0.jpg';
-import hackathon1 from '../assets/Hackathon_1.jpg';
-import hackathon2 from '../assets/Hackathon_2.jpg';
-import agentic from '../assets/Agentic.jpg';
-import quizbowl from '../assets/quiz_bowl.jpg'
-import calict from '../assets/cal_ict.jpg'
-import webpage from '../assets/webpage_design.jpg'
-import science from '../assets/science.jpg'
-import pc from '../assets/pc_assembly.jpg'
+import hackathon0 from '../../assets/awards/Hackathon_0.jpg';
+import hackathon1 from '../../assets/awards/Hackathon_1.jpg';
+import hackathon2 from '../../assets/awards/Hackathon_2.jpg';
+import agentic from '../../assets/awards/Agentic.jpg';
+import quizbowl from '../../assets/awards/quiz_bowl.jpg'
+import calict from '../../assets/awards/cal_ict.jpg'
+import webpage from '../../assets/awards/webpage_design.jpg'
+import science from '../../assets/awards/science.jpg'
+import pc from '../../assets/awards/pc_assembly.jpg'
 
 const awards = [
     {

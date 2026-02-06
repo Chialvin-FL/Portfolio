@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
-import KuwaGo from '../assets/KuwaGo.jpg';
-import MiManu from '../assets/MiManu.jpg';
-import TrabaHub from '../assets/TrabaHub.jpg';
-import Soothera from '../assets/Soothera.jpg';
-import CVO from '../assets/CVO.jpg';
-import Kayu from '../assets/Kayu.jpg';
+import KuwaGo from '../../assets/testimonials/KuwaGo.jpg';
+import MiManu from '../../assets/testimonials/MiManu.jpg';
+import TrabaHub from '../../assets/testimonials/TrabaHub.jpg';
+import Soothera from '../../assets/testimonials/Soothera.jpg';
+import CVO from '../../assets/testimonials/CVO.jpg';
+import Kayu from '../../assets/testimonials/Kayu.jpg';
 
 const testimonials = [
     {

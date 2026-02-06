@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProfileCard from './ProfileCard';
-import alvinImg from '../assets/alvin.jpg';
-import chiaraImg from '../assets/chiara.png';
+import alvinImg from '../../assets/profileCards/alvin.jpg';
+import chiaraImg from '../../assets/profileCards/chiara.png';
 
 
 const WhoWeAre = () => {
