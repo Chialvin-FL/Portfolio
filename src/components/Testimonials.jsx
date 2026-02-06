@@ -1,37 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
+import KuwaGo from '../assets/KuwaGo.jpg';
+import MiManu from '../assets/MiManu.jpg';
+import TrabaHub from '../assets/TrabaHub.jpg';
 
 const testimonials = [
     {
         id: 1,
-        name: "Sarah Johnson",
-        role: "CEO, StartUp Hub",
-        content: "Absolutely blown away by the attention to detail. The animations are buttery smooth and the performance is top-notch. Our conversion rates increased by 40% after the redesign.",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-        bgImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        name: "KuwaGo Team",
+        role: "FinTech Masterals",
+        content: "We were impressed by the system’s performance and responsiveness. Advanced features were implemented seamlessly, and the interface is intuitive and easy to use. All our requirements were delivered with precision.",
+        image: KuwaGo,
+        bgImage: KuwaGo
     },
     {
         id: 2,
-        name: "Michael Chen",
-        role: "CTO, FinTech Sol",
-        content: "Working with this duo was seamless. They understood our complex backend requirements and translated them into a user-friendly frontend. Highly recommended!",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-        bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        name: "MiManuTMS",
+        role: "FinTech Masterals",
+        content: "They handled complex functionalities with ease and transformed them into a fast, reliable, and user-friendly platform. The workflow is smooth, the UI/UX feels natural, and every requirement was met exactly as expected.",
+        image: MiManu,
+        bgImage: MiManu
     },
     {
         id: 3,
-        name: "Emily Davis",
-        role: "Marketing Director, CreativeScale",
-        content: "Creative, professional, and timely. They brought our brand vision to life in ways we didn't think were possible on the web.",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-        bgImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        name: "TrabaHub",
+        role: "FinTech Masterals",
+        content: "The application runs efficiently with optimized performance and well-executed advanced features. The interface is clean, intuitive, and easy for users to navigate. Overall satisfaction from us has been outstanding.",
+        image: TrabaHub,
+        bgImage: TrabaHub
     }
+
 ];
 
 const FlipCard = ({ t, i }) => {
     return (
-        <div className="group h-[290px] [perspective:1200px]">
+        <div className="group w-full aspect-video [perspective:1200px]">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
