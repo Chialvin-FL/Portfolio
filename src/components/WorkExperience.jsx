@@ -1,36 +1,73 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const experiences = [
+const experienceRows = [
     {
-        year: "2024 - Present",
-        role: "Senior Full Stack Engineers",
-        company: "Freelance",
-        description: "Delivering high-performance web applications for international clients. Specializing in e-commerce and SaaS solutions.",
-        side: "left"
+        alvin: {
+            year: "2025 - Present",
+            role: "QA Engineer",
+            company: "Talleco Job Target",
+            description: "Ensures product quality through automated and manual testing, improving system reliability and release stability."
+        },
+        chiara: {
+            year: "2025 - 2026",
+            role: "Junior Developer",
+            company: "Cubeworks Technology Consulting and Solutions, Inc.",
+            description: "Develops and maintains responsive web applications, focusing on performance optimization and clean user experience."
+        }
     },
     {
-        year: "2022 - 2024",
-        role: "Lead Frontend Developer",
-        company: "TechNova Solutions",
-        description: "Led the frontend team in rebuilding the core product dashboard, improving load times by 40%.",
-        side: "right"
+        alvin: {
+            year: "2025 - 2025",
+            role: "QA Engineer Intern",
+            company: "Talleco Job Target",
+            description: "Assisted in writing test cases, identifying bugs, and supporting the QA team in delivering stable feature releases."
+        },
+        chiara: {
+            year: "2025 - 2025",
+            role: "Developer Intern",
+            company: "Cubeworks Technology Consulting and Solutions, Inc.",
+            description: "Supported development of internal and client projects, building UI components and assisting in feature implementation."
+        }
     },
     {
-        year: "2021 - 2023",
-        role: "Backend System Architect",
-        company: "DataFlow Systems",
-        description: "Designed scalable microservices architecture handling over 1M requests per day.",
-        side: "left"
+        alvin: {
+            year: "2024 - 2025",
+            role: "Freelance Software Developer",
+            company: "Self-employed",
+            description: "Built custom websites and small-scale systems for clients, focusing on functionality, usability, and performance."
+        },
+        chiara: null,
     },
     {
-        year: "2020 - 2021",
-        role: "Junior Developers",
-        company: "StartUp Inc.",
-        description: "Started our journey collaborating on internal tools and client-facing websites.",
-        side: "right"
+        alvin: {
+            year: "2024 - 2024",
+            role: "Alliance Jumpstart Program - Software Developer",
+            company: "Alliance Software, Inc.",
+            description: "Completed intensive training in software development, working on real-world projects and collaborative coding tasks."
+        },
+        chiara: null,
     },
-];
+    {
+        alvin: null,
+        chiara: {
+            year: "2021 - 2025",
+            role: "Volunteer Student Intern",
+            company: "Cubeworks Technology Consulting and Solutions, Inc.",
+            description: "Gained hands-on experience contributing to various web projects, assisting in frontend tasks and system improvements in real world environment for 4 years."
+        }
+    },
+    {
+        alvin: {
+            year: "2019 - 2024",
+            role: "Freelance Computer Technician",
+            company: "Self-employed",
+            description: "Provided computer repair, maintenance, and software troubleshooting services for individual and small business clients."
+        },
+        chiara: null,
+    }
+]
+
 
 const WorkExperience = () => {
     // Use a ref for the section to track its scroll progress
@@ -73,9 +110,9 @@ const WorkExperience = () => {
                 </motion.div>
 
                 {/* Timeline Container */}
-                <div className="relative max-w-4xl mx-auto">
+                <div className="relative max-w-5xl mx-auto">
                     {/* Central Line Background (Dark) */}
-                    <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-slate-800 -translate-x-1/2 rounded-full" />
+                    <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-slate-800 -translate-x-1/2 rounded-full hidden md:block" />
 
                     {/* Moving Line (Primary Color) with Shimmer */}
                     <motion.div
@@ -92,12 +129,21 @@ const WorkExperience = () => {
                             repeat: Infinity,
                             ease: "linear"
                         }}
-                        className="absolute left-1/2 top-0 w-1 -translate-x-1/2 rounded-full origin-top shadow-[0_0_25px_rgba(255,255,255,0.9),0_0_15px_rgba(14,165,233,0.6)]"
+                        className="absolute left-1/2 top-0 w-1 -translate-x-1/2 rounded-full origin-top shadow-[0_0_25px_rgba(255,255,255,0.9),0_0_15px_rgba(14,165,233,0.6)] hidden md:block"
                     />
 
-                    <div className="space-y-12">
-                        {experiences.map((exp, index) => (
-                            <TimelineItem key={index} data={exp} index={index} />
+                    <div className="space-y-12 md:space-y-0">
+                        {/* Label Row */}
+                        <div className="hidden md:grid md:grid-cols-2 md:gap-24 mb-12">
+                            <div className="text-right pr-4">
+                                <h4 className="text-primary font-bold text-lg tracking-wide">ALVIN</h4>
+                            </div>
+                            <div className="text-left pl-4">
+                                <h4 className="text-primary font-bold text-lg tracking-wide">CHIARA</h4>
+                            </div>
+                        </div>
+                        {experienceRows.map((row, index) => (
+                            <TimelineRow key={index} row={row} index={index} />
                         ))}
                     </div>
                 </div>
@@ -106,41 +152,67 @@ const WorkExperience = () => {
     );
 };
 
-// Subcomponent for individual timeline items
-const TimelineItem = ({ data, index }) => {
-    const isLeft = index % 2 === 0; // Alternating sides
-
+// Subcomponent for a timeline row containing Alvin (left) and/or Chiara (right)
+const TimelineRow = ({ row, index }) => {
     return (
-        <div className={`relative flex items-center justify-between ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
-            {/* Spacer for the other side */}
-            <div className="hidden md:block w-5/12" />
-
-            {/* Center Dot */}
-            <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-dark border-4 border-slate-700 rounded-full z-10 group-hover:border-primary transition-colors">
+        <div className="relative md:grid md:grid-cols-2 md:gap-24 mb-12 last:mb-0">
+            {/* Center Dot - only visible on Desktop */}
+            <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-[#0a0a0a] border-4 border-slate-700 rounded-full z-20 hidden md:block">
                 <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true, margin: "-30% 0px -20% 0px" }}
-                    className="w-full h-full bg-primary rounded-full"
+                    className="w-full h-full bg-primary rounded-full shadow-[0_0_10px_#0ea5e9]"
                 />
             </div>
 
-            {/* Content Card */}
-            <motion.div
-                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-30% 0px -20% 0px" }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
-                className="w-full md:w-5/12 p-6 bg-secondary/80 backdrop-blur-sm border border-white/5 rounded-2xl hover:border-primary/30 transition-all hover:-translate-y-1 hover:shadow-xl"
-            >
-                <span className="text-primary font-mono text-sm mb-2 block">{data.year}</span>
-                <h4 className="text-xl font-bold text-white mb-1">{data.role}</h4>
-                <h5 className="text-slate-400 font-medium text-sm mb-3">{data.company}</h5>
-                <p className="text-slate-400 text-sm leading-relaxed">
+            {/* Alvin's Side (Left) */}
+            <div className="relative mb-8 md:mb-0">
+                {row.alvin ? (
+                    <ExperienceCard data={row.alvin} side="left" index={index} />
+                ) : (
+                    <div className="hidden md:block" /> // Empty space if no experience for Alvin in this row
+                )}
+            </div>
+
+            {/* Chiara's Side (Right) */}
+            <div className="relative">
+                {row.chiara ? (
+                    <ExperienceCard data={row.chiara} side="right" index={index} />
+                ) : (
+                    <div className="hidden md:block" /> // Empty space if no experience for Chiara in this row
+                )}
+            </div>
+        </div>
+    );
+};
+
+const ExperienceCard = ({ data, side, index }) => {
+    const isLeft = side === "left";
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
+            className={`w-full p-6 bg-secondary/40 backdrop-blur-md border border-white/5 rounded-2xl hover:border-primary/30 transition-all hover:-translate-y-1 hover:shadow-2xl group relative overflow-hidden`}
+        >
+            {/* Ambient background glow on hover */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${isLeft ? 'from-sky-500/5 to-transparent' : 'from-indigo-500/5 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+            <div className="relative z-10">
+                <span className="text-primary font-mono text-xs font-bold mb-2 block tracking-wider opacity-80">{data.year}</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">{data.role}</h4>
+                <h5 className="text-slate-300 font-medium text-sm mb-4">{data.company}</h5>
+                <p className="text-slate-400 text-sm leading-relaxed font-light">
                     {data.description}
                 </p>
-            </motion.div>
-        </div>
+            </div>
+
+            {/* Decorative element */}
+            <div className={`absolute top-0 ${isLeft ? 'right-0' : 'left-0'} w-16 h-16 bg-gradient-to-br from-primary/10 to-transparent blur-2xl rounded-full -translate-y-1/2 translate-x-1/2`} />
+        </motion.div>
     );
 };
 
