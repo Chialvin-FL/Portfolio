@@ -1,77 +1,77 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Calendar } from 'lucide-react';
-import hackathon0 from '../../assets/awards/Hackathon_0.jpg';
-import hackathon1 from '../../assets/awards/Hackathon_1.jpg';
-import hackathon2 from '../../assets/awards/Hackathon_2.jpg';
-import agentic from '../../assets/awards/agentic.jpg';
-import quizbowl from '../../assets/awards/quiz_bowl.jpg'
-import calict from '../../assets/awards/cal_ict.jpg'
-import webpage from '../../assets/awards/webpage_design.jpg'
-import science from '../../assets/awards/science.jpg'
-import pc from '../../assets/awards/pc_assembly.jpg'
+import hackathon01 from '../../assets/awards/hackathon01.jpg';
+import hackathon02 from '../../assets/awards/hackathon02.jpg';
+import hackathon03 from '../../assets/awards/hackathon03.jpg';
+import hackathon04 from '../../assets/awards/hackathon04.jpg';
+import hackathon05 from '../../assets/awards/hackathon05.jpg';
+import hackathon06 from '../../assets/awards/hackathon06.jpg';
+import hackathon07 from '../../assets/awards/hackathon07.jpg';
+import hackathon08 from '../../assets/awards/hackathon08.jpg';
+import hackathon09 from '../../assets/awards/hackathon09.jpg';
 
 const awards = [
     {
         title: "Ready Tensor Agentic AI Competition",
         award: "Participant",
-        image: agentic,
+        image: hackathon09,
         description: "Smart energy monitoring dashboard for household appliances.",
         date: "February 2025"
     },
     {
         title: "CIB.O Cebu Interschool Hackathon",
         award: "2nd Place Education Category",
-        image: hackathon2,
+        image: hackathon08,
         description: "Developed an autonomous drone delivery system routing algorithm.",
         date: "June 2024"
     },
     {
         title: "UC ICT Congress Intercampus Hackathon",
         award: "Special Awards",
-        image: hackathon1,
+        image: hackathon07,
         description: "Created a simplified investment platform for Gen Z users.",
         date: "April 2024"
     },
     {
         title: "UC-Banilad CCS Days UI/UX Design Contest",
         award: "2nd Place",
-        image: hackathon0,
+        image: hackathon06,
         description: "Smart energy monitoring dashboard for household appliances.",
         date: "March 2024"
     },
     {
         title: "Intercampus Java Quiz Bowl",
         award: "2nd Place",
-        image: quizbowl,
+        image: hackathon05,
         description: "Smart energy monitoring dashboard for household appliances.",
         date: "March 2023"
     },
     {
         title: "CAL ICT Champions Quiz Bowl",
         award: "Participant",
-        image: calict,
+        image: hackathon04,
         description: "Smart energy monitoring dashboard for household appliances.",
         date: "2018"
     },
     {
         title: "Intercampus Webpage Designing",
         award: "2nd Place",
-        image: webpage,
+        image: hackathon03,
         description: "Smart energy monitoring dashboard for household appliances.",
         date: "2017"
     },
     {
         title: "Interschool Science Investigatory Project",
         award: "2nd Place",
-        image: science,
+        image: hackathon02,
         description: "Smart energy monitoring dashboard for household appliances.",
         date: "2017"
     },
     {
         title: "Intercampus PC Assembly/Disassembly, Configuration, Troubleshoot & Networking",
         award: "2nd Place",
-        image: pc,
+        image: hackathon01,
         description: "Smart energy monitoring dashboard for household appliances.",
         date: "2016"
     },
