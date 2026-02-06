@@ -4,6 +4,9 @@ import { Quote } from 'lucide-react';
 import KuwaGo from '../assets/KuwaGo.jpg';
 import MiManu from '../assets/MiManu.jpg';
 import TrabaHub from '../assets/TrabaHub.jpg';
+import Soothera from '../assets/Soothera.jpg';
+import CVO from '../assets/CVO.jpg';
+import Kayu from '../assets/Kayu.jpg';
 
 const testimonials = [
     {
@@ -29,13 +32,36 @@ const testimonials = [
         content: "The application runs efficiently with optimized performance and well-executed advanced features. The interface is clean, intuitive, and easy for users to navigate. Overall satisfaction from us has been outstanding.",
         image: TrabaHub,
         bgImage: TrabaHub
+    },
+    {
+        id: 4,
+        name: "City Veterinary Office",
+        role: "Senior High School",
+        content: "The system streamlined our daily operations and made record management faster and more organized. It’s reliable, easy to use, and has greatly improved how we serve the community.",
+        image: CVO,
+        bgImage: CVO
+    },
+    {
+        id: 5,
+        name: "Soothera",
+        role: "FinTech Masterals",
+        content: "The platform strengthened our workflow with stable performance and smart features. It helped businesses operate more efficiently while providing a smooth and intuitive experience for our users.",
+        image: Soothera,
+        bgImage: Soothera
+    },
+    {
+        id: 6,
+        name: "Kayu",
+        role: "Engraver Business",
+        content: "This system helped us manage orders and customer requests more effectively. It improved our process, saved time, and made our business operations much more organized.",
+        image: Kayu,
+        bgImage: Kayu
     }
-
 ];
 
 const FlipCard = ({ t, i }) => {
     return (
-        <div className="group w-full aspect-video [perspective:1200px]">
+        <div className="group w-full h-[280px] sm:h-[300px] md:aspect-video [perspective:1200px]">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +79,7 @@ const FlipCard = ({ t, i }) => {
                 <div className="absolute inset-0 h-full w-full rounded-2xl bg-dark p-10 border border-white/5 [backface-visibility:hidden] flex flex-col justify-between text-left">
                     <div>
                         <Quote className="absolute top-8 right-8 text-primary/20" size={48} />
-                        <p className="text-slate-300 italic mb-8 relative z-10 leading-relaxed">"{t.content}"</p>
+                        <p className="text-slate-300 italic mb-8 leading-relaxed line-clamp-5">"{t.content}"</p>
                     </div>
                     <div className="flex items-center gap-4">
                         <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover border-2 border-primary/50" />
