@@ -32,7 +32,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm text-slate-500">Email Us</p>
-                                    <p className="font-medium">hello@devduo.com</p>
+                                    <p className="font-medium">chialvin143@gmail.com</p>
                                 </div>
                             </div>
 
@@ -42,7 +42,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm text-slate-500">Location</p>
-                                    <p className="font-medium">San Francisco, CA (Remote Friendly)</p>
+                                    <p className="font-medium">Compostela, Cebu (Remote-Friendly)</p>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ const Contact = () => {
                                     <input
                                         type="text"
                                         className="w-full bg-dark border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-primary focus:border-transparent transition-all"
-                                        placeholder="John Doe"
+                                        placeholder="Enter your name"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -70,7 +70,7 @@ const Contact = () => {
                                     <input
                                         type="email"
                                         className="w-full bg-dark border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-primary focus:border-transparent transition-all"
-                                        placeholder="john@example.com"
+                                        placeholder="Enter your email"
                                     />
                                 </div>
                             </div>
@@ -82,6 +82,7 @@ const Contact = () => {
                                     <option>Mobile App</option>
                                     <option>UI/UX Design</option>
                                     <option>Consulting</option>
+                                    <option>Others..</option>
                                 </select>
                             </div>
 
