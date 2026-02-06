@@ -4,7 +4,7 @@ import { Trophy, Calendar } from 'lucide-react';
 import hackathon0 from '../../assets/awards/Hackathon_0.jpg';
 import hackathon1 from '../../assets/awards/Hackathon_1.jpg';
 import hackathon2 from '../../assets/awards/Hackathon_2.jpg';
-import agentic from '../../assets/awards/Agentic.jpg';
+import agentic from '../../assets/awards/agentic.jpg';
 import quizbowl from '../../assets/awards/quiz_bowl.jpg'
 import calict from '../../assets/awards/cal_ict.jpg'
 import webpage from '../../assets/awards/webpage_design.jpg'
