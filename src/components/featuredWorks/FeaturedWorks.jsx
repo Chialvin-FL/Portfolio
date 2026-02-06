@@ -2,14 +2,20 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 import './FeaturedWorks.css';
+import soothera from '../../assets/featuredWorks/soothera.png';
+import soothera2 from '../../assets/featuredWorks/soothera2.png';
+import kuwago from '../../assets/featuredWorks/kuwago.png';
+import kuwago2 from '../../assets/featuredWorks/kuwago2.png';
+import iot from '../../assets/featuredWorks/iot.png';
+import iot2 from '../../assets/featuredWorks/iot2.png';
 
 const projects = [
     {
         id: 1,
         title: "Salon Services Booking Platform",
         category: "Cross-Platform Application",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-97-large.mp4",
+        image: soothera,
+        video: soothera2,
         description: "A cross-platform booking system for salons that streamlines appointment scheduling, service management, staff availability, and customer notifications in one intuitive interface.",
         tech: ["React", "Node.js", "PostgreSQL", "Tailwind"],
     },
@@ -17,8 +23,8 @@ const projects = [
         id: 2,
         title: "Hybrid P2B Lending Platform System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-monitor-close-up-1728-large.mp4",
+        image: kuwago,
+        video: kuwago2,
         description: "A secure lending platform connecting private lenders and businesses, featuring loan tracking, approval workflows, repayment monitoring, and financial dashboards.",
         tech: ["Python", "Django", "D3.js", "Redis"],
     },
@@ -26,7 +32,7 @@ const projects = [
         id: 3,
         title: "Training Management System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-red-and-blue-digital-technology-connection-1718-large.mp4",
         description: "A centralized platform for managing employee or student training programs, tracking progress, attendance, certifications, and performance evaluations.",
         tech: ["React Native", "Firebase", "HealthKit"],
@@ -35,7 +41,7 @@ const projects = [
         id: 4,
         title: "Veterinary Services Information and Assistance System",
         category: "SaaS Platform",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A digital system for managing veterinary records, patient history, appointment scheduling, and public service information for efficient clinic operations.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
@@ -44,7 +50,7 @@ const projects = [
         id: 5,
         title: "Mental Healthcare Facility Provider and Assistant Application",
         category: "Cross-Platform Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A mental health support platform that connects patients with providers, manages consultations, tracks progress, and offers digital assistance tools for care management.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
@@ -53,7 +59,7 @@ const projects = [
         id: 6,
         title: "AI-Powered Water Delivery System",
         category: "Mobile Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "An intelligent delivery management app that automates scheduling, optimizes routes, predicts demand, and coordinates drivers for efficient water distribution.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
@@ -62,7 +68,7 @@ const projects = [
         id: 7,
         title: "Web-Based POS System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A browser-based point-of-sale system for handling transactions, managing products, tracking sales, and generating financial reports in real time.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
@@ -71,7 +77,7 @@ const projects = [
         id: 8,
         title: "Booking & Reservation System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A flexible reservation platform for managing bookings, customer details, schedules, and availability for service-based businesses.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
@@ -80,8 +86,8 @@ const projects = [
         id: 9,
         title: "IoT Building Management System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        image: iot,
+        video: iot2,
         description: "An IoT-integrated platform for monitoring and controlling building utilities such as lighting, temperature, and energy usage through real-time dashboards.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
     },
@@ -89,7 +95,7 @@ const projects = [
         id: 10,
         title: "Municipal LGU-LCR Records Management System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A digital records management system for local government civil registry offices, organizing birth, marriage, and death records with secure access and retrieval.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
@@ -98,7 +104,7 @@ const projects = [
         id: 11,
         title: "POS Inventory and Manufacturing System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "An integrated system that connects point-of-sale operations with inventory tracking and manufacturing workflows for better stock and production management.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
@@ -107,7 +113,7 @@ const projects = [
         id: 12,
         title: "Personal Finance Management Application",
         category: "Mobile Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A mobile app for tracking income, expenses, savings, and budgets, helping users manage their finances with clear insights and spending analytics.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
@@ -265,7 +271,7 @@ const FeaturedWorks = () => {
             if (timeoutId) clearTimeout(timeoutId);
             timeoutId = setTimeout(() => {
                 changeSlide(1);
-            }, 3000);
+            }, 2000);
         };
 
         const handleInteraction = () => {
@@ -404,7 +410,7 @@ const FeaturedWorks = () => {
                                 return (
                                     <div className="flex flex-col md:flex-row max-h-[90vh] overflow-y-auto">
                                         <div className="md:w-1/2 relative h-64 md:h-auto">
-                                            <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                                            <img src={project.video} alt={project.title} className="w-full h-full object-cover" />
                                             <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent" />
                                         </div>
 
