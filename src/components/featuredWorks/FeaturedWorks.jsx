@@ -70,7 +70,7 @@ const projects = [
         image: aquaroute,
         video: aquaroute2,
         description: "An intelligent delivery management app that automates scheduling, optimizes routes, predicts demand, and coordinates drivers for efficient water distribution.",
-        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+        tech: ["Kotlin", "Firebase Firestore", "Google Maps API", "Gemini AI", "React (Vite)", "Cloudflare"],
     },
     {
         id: 7,
@@ -96,8 +96,8 @@ const projects = [
         category: "Web Application",
         image: iot,
         video: iot2,
-        description: "An IoT-integrated platform for monitoring and controlling building utilities such as lighting, temperature, and energy usage through real-time dashboards.",
-        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+        description: "An IoT-integrated platform for monitoring and controlling building utilities such as lighting, temperature, and energy usage through real-time dashboards, specifically focusing on AHUs.",
+        tech: ["MQTT", "HTML/Javascript", "Node.js", "Cloudflare"],
     },
     {
         id: 10,
@@ -106,7 +106,7 @@ const projects = [
         image: lgu,
         video: lgu2,
         description: "A digital records management system for local government civil registry offices, organizing birth, marriage, and death records with secure access and retrieval.",
-        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+        tech: ["MVC", "ASP.NET", "MSSQL Server", "IIS"],
     },
     {
         id: 11,
@@ -124,7 +124,7 @@ const projects = [
         image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A mobile app for tracking income, expenses, savings, and budgets, helping users manage their finances with clear insights and spending analytics.",
-        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+        tech: ["React Native", "SQLite", "Tailwind"],
     },
 ];
 

@@ -36,7 +36,7 @@ const techStackData = [
     {
         title: 'Backend & Tools',
         label: 'Infrastructure',
-        tags: ['Node.js', 'FastAPI', 'Firebase', 'MySQL', 'MongoDB', 'PostgreSQL'],
+        tags: ['Node.js', 'FastAPI', 'Firebase', 'MySQL', 'MongoDB', 'PostgreSQL', 'MSSQL Server'],
         icon: <Server size={20} />,
         color: 'rgba(2, 6, 23, 0.5)'
     },
