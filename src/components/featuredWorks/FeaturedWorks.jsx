@@ -16,6 +16,8 @@ import helpkonnect from '../../assets/featuredWorks/helpkonnect.png';
 import helpkonnect2 from '../../assets/featuredWorks/helpkonnect2.png';
 import aquaroute from '../../assets/featuredWorks/aquaroute.png';
 import aquaroute2 from '../../assets/featuredWorks/aquaroute2.png';
+import cvoui from '../../assets/featuredWorks/cvoui.png';
+import cvoui2 from '../../assets/featuredWorks/cvoui2.png';
 
 const projects = [
     {
@@ -48,9 +50,9 @@ const projects = [
     {
         id: 4,
         title: "Veterinary Services Information and Assistance System",
-        category: "SaaS Platform",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        category: "Mobile Application",
+        image: cvoui,
+        video: cvoui2,
         description: "A digital system for managing veterinary records, patient history, appointment scheduling, and public service information for efficient clinic operations.",
         tech: ["Javscript", "React.js", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "OpenAI", "MVVM", "Java", "XML", "Firebase Authentication", "Firebase Firestore",],
     },
