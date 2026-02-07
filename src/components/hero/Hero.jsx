@@ -5,6 +5,14 @@ import { OrbitControls } from '@react-three/drei';
 import Antigravity from './Antigravity';
 
 const Hero = () => {
+    const handleScroll = (e, href) => {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* 3D Particle Animation - Local to Hero section with cursor detection */}
@@ -55,12 +63,14 @@ const Hero = () => {
                     >
                         <a
                             href="#featured-works"
+                            onClick={(e) => handleScroll(e, '#featured-works')}
                             className="px-8 py-4 bg-white text-dark font-bold rounded-full hover:bg-slate-200 transition-all hover:scale-105 pointer-events-auto"
                         >
                             View Our Work
                         </a>
                         <a
                             href="#contact"
+                            onClick={(e) => handleScroll(e, '#contact')}
                             className="px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-all hover:scale-105 backdrop-blur-sm pointer-events-auto"
                         >
                             Contact Us
@@ -68,6 +78,7 @@ const Hero = () => {
                     </motion.div>
                 </motion.div>
             </div>
+
 
             {/* Scroll Indicator */}
             <motion.div

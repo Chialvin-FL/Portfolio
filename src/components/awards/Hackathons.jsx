@@ -65,7 +65,7 @@ const awards = [
         title: "Interschool Science Investigatory Project",
         award: "2nd Place",
         image: hackathon02,
-        description: "Presented a research-based project applying scientific methods to solve practical, real-world problems.",
+        description: "Presented a research-based project using Arduino UNO, applying scientific methods to solve practical, real-world problems.",
         date: "2017"
     },
     {
