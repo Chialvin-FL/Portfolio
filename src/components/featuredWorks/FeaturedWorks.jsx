@@ -66,7 +66,7 @@ const projects = [
     {
         id: 6,
         title: "AI-Powered Water Delivery System",
-        category: "Mobile Application",
+        category: "Cross-Platform Application",
         image: aquaroute,
         video: aquaroute2,
         description: "An intelligent delivery management app that automates scheduling, optimizes routes, predicts demand, and coordinates drivers for efficient water distribution.",
