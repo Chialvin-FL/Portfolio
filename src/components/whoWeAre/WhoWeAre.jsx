@@ -36,6 +36,7 @@ const WhoWeAre = () => {
             status: "Online",
             avatarUrl: alvinImg,
             contactText: "Contact Me",
+            githubUrl: "https://github.com/ajiwnl",
             behindGlowColor: "rgba(14, 165, 233, 0.4)"
         },
         {
@@ -52,6 +53,7 @@ const WhoWeAre = () => {
             status: "Online",
             avatarUrl: chiaraImg,
             contactText: "Let's Talk",
+            githubUrl: "https://github.com/Scyn4pse",
             behindGlowColor: "rgba(99, 102, 241, 0.4)"
         }
     ];
@@ -88,6 +90,7 @@ const WhoWeAre = () => {
                                     status={member.status}
                                     avatarUrl={member.avatarUrl}
                                     contactText={member.contactText}
+                                    githubUrl={member.githubUrl}
                                     showUserInfo
                                     enableTilt={true}
                                     enableMobileTilt={false}

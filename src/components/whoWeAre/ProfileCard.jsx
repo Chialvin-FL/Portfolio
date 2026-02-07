@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import { Github } from 'lucide-react';
 import './ProfileCard.css';
 
 const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)';
@@ -39,6 +40,7 @@ const ProfileCardComponent = ({
     tagline = '',
     description = '',
     bulletPoints = [],
+    githubUrl = null,
     onContactClick
 }) => {
     const wrapRef = useRef(null);
@@ -367,15 +369,34 @@ const ProfileCardComponent = ({
                                             <div className="pc-handle">{handle}</div>
                                         </div>
                                     </div>
-                                    <button
-                                        className="pc-contact-btn"
-                                        onClick={handleContactClick}
-                                        style={{ pointerEvents: 'auto' }}
-                                        type="button"
-                                        aria-label={`Contact ${name || 'user'}`}
-                                    >
-                                        {contactText}
-                                    </button>
+                                    {githubUrl ? (
+                                        <a
+                                            className="pc-contact-btn github-btn"
+                                            href={githubUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{
+                                                pointerEvents: 'auto',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '8px'
+                                            }}
+                                            aria-label={`View ${name || 'user'}'s GitHub`}
+                                        >
+                                            <Github size={16} />
+                                            <span>Github</span>
+                                        </a>
+                                    ) : (
+                                        <button
+                                            className="pc-contact-btn"
+                                            onClick={handleContactClick}
+                                            style={{ pointerEvents: 'auto' }}
+                                            type="button"
+                                            aria-label={`Contact ${name || 'user'}`}
+                                        >
+                                            {contactText}
+                                        </button>
+                                    )}
                                 </div>
                             )}
                         </div>
