@@ -10,6 +10,12 @@ import iot from '../../assets/featuredWorks/iot.png';
 import iot2 from '../../assets/featuredWorks/iot2.png';
 import lgu from '../../assets/featuredWorks/lgu.png';
 import lgu2 from '../../assets/featuredWorks/lgu2.png';
+import trabahub from '../../assets/featuredWorks/trabahub.png';
+import trabahub2 from '../../assets/featuredWorks/trabahub2.png';
+import helpkonnect from '../../assets/featuredWorks/helpkonnect.png';
+import helpkonnect2 from '../../assets/featuredWorks/helpkonnect2.png';
+import aquaroute from '../../assets/featuredWorks/aquaroute.png';
+import aquaroute2 from '../../assets/featuredWorks/aquaroute2.png';
 
 const projects = [
     {
@@ -52,8 +58,8 @@ const projects = [
         id: 5,
         title: "Mental Healthcare Facility Provider and Assistant Application",
         category: "Cross-Platform Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        image: helpkonnect,
+        video: helpkonnect2,
         description: "A mental health support platform that connects patients with providers, manages consultations, tracks progress, and offers digital assistance tools for care management.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
     },
@@ -61,8 +67,8 @@ const projects = [
         id: 6,
         title: "AI-Powered Water Delivery System",
         category: "Mobile Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        image: aquaroute,
+        video: aquaroute2,
         description: "An intelligent delivery management app that automates scheduling, optimizes routes, predicts demand, and coordinates drivers for efficient water distribution.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
     },
@@ -79,8 +85,8 @@ const projects = [
         id: 8,
         title: "Booking & Reservation System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        image: trabahub,
+        video: trabahub2,
         description: "A flexible reservation platform for managing bookings, customer details, schedules, and availability for service-based businesses.",
         tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
     },
