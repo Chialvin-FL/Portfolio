@@ -10,6 +10,15 @@ const experienceRows = [
             description: "Ensures product quality through automated and manual testing, improving system reliability and release stability."
         },
         chiara: {
+            year: "2025 - Present",
+            role: "Freelance Software Developer",
+            company: "Self-employed",
+            description: "Works closely with clients to understand their goals, providing technical consultation and delivering tailored web solutions that align with their specific business needs."
+        }
+    },
+    {
+        alvin: null,
+        chiara: {
             year: "2025 - 2026",
             role: "Junior Developer",
             company: "Cubeworks Technology Consulting and Solutions, Inc.",
