@@ -18,6 +18,8 @@ import aquaroute from '../../assets/featuredWorks/aquaroute.png';
 import aquaroute2 from '../../assets/featuredWorks/aquaroute2.png';
 import cvoui from '../../assets/featuredWorks/cvoui.png';
 import cvoui2 from '../../assets/featuredWorks/cvoui2.png';
+import kayu from '../../assets/featuredWorks/kayuui.png';
+import kayu2 from '../../assets/featuredWorks/kayuui2.png';
 
 const projects = [
     {
@@ -98,7 +100,7 @@ const projects = [
         category: "Web Application",
         image: iot,
         video: iot2,
-        description: "An IoT-integrated platform for monitoring and controlling building utilities such as lighting, temperature, and energy usage through real-time dashboards, specifically focusing on AHUs.",
+        description: "An IoT-integrated platform for monitoring, controlling and automating building utilities such as lighting, temperature, and energy usage through real-time actions, specifically focusing on HVAC.",
         tech: ["MQTT", "HTML/Javascript", "Node.js", "Cloudflare"],
     },
     {
@@ -127,6 +129,15 @@ const projects = [
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A mobile app for tracking income, expenses, savings, and budgets, helping users manage their finances with clear insights and spending analytics.",
         tech: ["React Native", "SQLite", "Tailwind"],
+    },
+    {
+        id: 13,
+        title: "POS Inventory and Manufacturing System",
+        category: "Web Application",
+        image: kayu,
+        video: kayu2,
+        description: "A full-featured POS and inventory management system that streamlines sales, stock tracking, and product management. Includes advanced manufacturing costing modules with dynamic cost tracking, per-unit production computation, production-based payroll, and financial dashboards with AI-driven insights for profitability and operational efficiency.",
+        tech: ["React (Vite)", "Firebase Firestore", "Firebase Authentication", "Cloudflare", "Javascript"],
     },
 ];
 
