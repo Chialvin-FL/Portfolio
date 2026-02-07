@@ -70,7 +70,7 @@ const projects = [
         image: aquaroute,
         video: aquaroute2,
         description: "An intelligent delivery management app that automates scheduling, optimizes routes, predicts demand, and coordinates drivers for efficient water distribution.",
-        tech: ["Kotlin", "Firebase Firestore", "Google Maps API", "Gemini AI", "React (Vite)", "Cloudflare"],
+        tech: ["Kotlin", "Firebase Firestore", "Firebase Authentication", "Google Maps API", "Gemini AI", "React (Vite)", "Cloudflare", "Javascript"],
     },
     {
         id: 7,
@@ -106,7 +106,7 @@ const projects = [
         image: lgu,
         video: lgu2,
         description: "A digital records management system for local government civil registry offices, organizing birth, marriage, and death records with secure access and retrieval.",
-        tech: ["MVC", "ASP.NET", "MSSQL Server", "IIS"],
+        tech: ["MVC", "HTML/Javascript", "ASP.NET", "MSSQL Server", "IIS"],
     },
     {
         id: 11,
