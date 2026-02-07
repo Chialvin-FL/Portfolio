@@ -34,7 +34,7 @@ const projects = [
         image: kuwago,
         video: kuwago2,
         description: "A secure lending platform connecting private lenders and businesses, featuring loan tracking, approval workflows, repayment monitoring, and financial dashboards.",
-        tech: ["Typescript", "Nextjs", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "TesnsorFlow/Keras", "OpenCV", "Hugging Transformers", "Firebase Authentication", "Firebase Firestore", "Paymongo"],
+        tech: ["Typescript", "Next.js", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "TesnsorFlow/Keras", "OpenCV", "Hugging Transformers", "Firebase Authentication", "Firebase Firestore", "Paymongo"],
     },
     {
         id: 3,
@@ -43,7 +43,7 @@ const projects = [
         image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-red-and-blue-digital-technology-connection-1718-large.mp4",
         description: "A centralized platform for managing employee or student training programs, tracking progress, attendance, certifications, and performance evaluations.",
-        tech: ["Javscript", "Reactjs", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "OpenAI", "OpenCV", "Hugging Transformers", "Firebase Authentication", "Firebase Firestore", "Paymongo"],
+        tech: ["Javscript", "React.js", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "OpenAI", "OpenCV", "Hugging Transformers", "Firebase Authentication", "Firebase Firestore", "Paymongo"],
     },
     {
         id: 4,
@@ -52,7 +52,7 @@ const projects = [
         image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A digital system for managing veterinary records, patient history, appointment scheduling, and public service information for efficient clinic operations.",
-        tech: ["Javscript", "Reactjs", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "OpenAI", "MVVM", "Java", "XML", "Firebase Authentication", "Firebase Firestore",],
+        tech: ["Javscript", "React.js", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "OpenAI", "MVVM", "Java", "XML", "Firebase Authentication", "Firebase Firestore",],
     },
     {
         id: 5,
@@ -61,7 +61,7 @@ const projects = [
         image: helpkonnect,
         video: helpkonnect2,
         description: "A mental health support platform that connects patients with providers, manages consultations, tracks progress, and offers digital assistance tools for care management.",
-        tech: ["Javscript", "Reactjs", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "OpenAI", "OpenCV", "Hugging Transformers", "MVVM", "Java", "XML", "Firebase Authentication", "Firebase Firestore", "Mapbox"],
+        tech: ["Javscript", "React.js", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "OpenAI", "OpenCV", "Hugging Transformers", "MVVM", "Java", "XML", "Firebase Authentication", "Firebase Firestore", "Mapbox"],
     },
     {
         id: 6,
