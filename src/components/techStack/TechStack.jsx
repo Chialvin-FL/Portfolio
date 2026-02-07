@@ -15,7 +15,7 @@ const techStackData = [
     {
         title: 'Programming',
         label: 'Core',
-        tags: ['C', 'C#', 'Java', 'JavaScript', 'PHP', 'Kotlin', 'Assembly', 'Python'],
+        tags: ['C', 'C#', 'Java', 'JavaScript', 'PHP', 'Kotlin', 'Assembly', 'Python', 'XML'],
         icon: <Terminal size={20} />,
         color: 'rgba(2, 6, 23, 0.5)'
     },

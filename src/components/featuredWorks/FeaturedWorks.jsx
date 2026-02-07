@@ -70,7 +70,7 @@ const projects = [
         image: aquaroute,
         video: aquaroute2,
         description: "An intelligent delivery management app that automates scheduling, optimizes routes, predicts demand, and coordinates drivers for efficient water distribution.",
-        tech: ["Kotlin", "Firebase Firestore", "Firebase Authentication", "Google Maps API", "Gemini AI", "React (Vite)", "Cloudflare", "Javascript"],
+        tech: ["Kotlin", "XML", "Firebase Firestore", "Firebase Authentication", "Google Maps API", "Gemini AI", "React (Vite)", "Cloudflare", "Javascript"],
     },
     {
         id: 7,
