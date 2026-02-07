@@ -281,7 +281,7 @@ const FeaturedWorks = () => {
             if (timeoutId) clearTimeout(timeoutId);
             timeoutId = setTimeout(() => {
                 changeSlide(1);
-            }, 2000);
+            }, 5000);
         };
 
         const handleInteraction = () => {
