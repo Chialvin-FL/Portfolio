@@ -311,7 +311,15 @@ const FeaturedWorks = () => {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <span className="loader__text">LOADING...</span>
+                        <div className="wave-loader">
+                            <div className="wave-bar"></div>
+                            <div className="wave-bar"></div>
+                            <div className="wave-bar"></div>
+                            <div className="wave-bar"></div>
+                            <div className="wave-bar"></div>
+                            <div className="wave-bar"></div>
+                            <div className="wave-bar"></div>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
