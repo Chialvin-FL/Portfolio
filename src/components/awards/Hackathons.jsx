@@ -16,63 +16,63 @@ const awards = [
         title: "Ready Tensor Agentic AI Competition",
         award: "Participant",
         image: hackathon09,
-        description: "Smart energy monitoring dashboard for household appliances.",
+        description: "Explored agentic AI concepts by building intelligent task-driven solutions using modern AI tools and frameworks.",
         date: "February 2025"
     },
     {
         title: "CIB.O Cebu Interschool Hackathon",
         award: "2nd Place Education Category",
         image: hackathon08,
-        description: "Developed an autonomous drone delivery system routing algorithm.",
+        description: "Developed an education-focused digital solution designed to improve accessibility, engagement, and learning efficiency for students.",
         date: "June 2024"
     },
     {
         title: "UC ICT Congress Intercampus Hackathon",
         award: "Special Awards",
         image: hackathon07,
-        description: "Created a simplified investment platform for Gen Z users.",
+        description: "Built an innovative web-based platform addressing real-world user needs through practical and scalable system design.",
         date: "April 2024"
     },
     {
         title: "UC-Banilad CCS Days UI/UX Design Contest",
         award: "2nd Place",
         image: hackathon06,
-        description: "Smart energy monitoring dashboard for household appliances.",
+        description: "Designed a clean, user-centered interface focused on usability, accessibility, and intuitive user experience.",
         date: "March 2024"
     },
     {
         title: "Intercampus Java Quiz Bowl",
         award: "2nd Place",
         image: hackathon05,
-        description: "Smart energy monitoring dashboard for household appliances.",
+        description: "Demonstrated strong knowledge in Java programming concepts, problem-solving, and application development fundamentals.",
         date: "March 2023"
     },
     {
         title: "CAL ICT Champions Quiz Bowl",
         award: "Participant",
         image: hackathon04,
-        description: "Smart energy monitoring dashboard for household appliances.",
+        description: "Competed in an ICT knowledge-based competition covering programming, hardware, and general technology concepts.",
         date: "2018"
     },
     {
         title: "Intercampus Webpage Designing",
         award: "2nd Place",
         image: hackathon03,
-        description: "Smart energy monitoring dashboard for household appliances.",
+        description: "Created visually engaging and functional web page designs showcasing layout, styling, and frontend development skills.",
         date: "2017"
     },
     {
         title: "Interschool Science Investigatory Project",
         award: "2nd Place",
         image: hackathon02,
-        description: "Smart energy monitoring dashboard for household appliances.",
+        description: "Presented a research-based project applying scientific methods to solve practical, real-world problems.",
         date: "2017"
     },
     {
         title: "Intercampus PC Assembly/Disassembly, Configuration, Troubleshoot & Networking",
         award: "2nd Place",
         image: hackathon01,
-        description: "Smart energy monitoring dashboard for household appliances.",
+        description: "Showcased technical skills in computer hardware assembly, system configuration, troubleshooting, and basic networking.",
         date: "2016"
     },
 ];
