@@ -20,6 +20,8 @@ import cvoui from '../../assets/featuredWorks/cvoui.png';
 import cvoui2 from '../../assets/featuredWorks/cvoui2.png';
 import kayu from '../../assets/featuredWorks/kayuui.png';
 import kayu2 from '../../assets/featuredWorks/kayuui2.png';
+import splitmoney from '../../assets/featuredWorks/splitmoney.png';
+import splitmoney2 from '../../assets/featuredWorks/splitmoney2.png';
 
 const projects = [
     {
@@ -83,7 +85,7 @@ const projects = [
         image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "A browser-based point-of-sale system for handling transactions, managing products, tracking sales, and generating financial reports in real time.",
-        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+        tech: ["Next.js", "OpenAI", "Stripe", "MongoDB"],
     },
     {
         id: 8,
@@ -119,16 +121,16 @@ const projects = [
         image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
         video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
         description: "An integrated system that connects point-of-sale operations with inventory tracking and manufacturing workflows for better stock and production management.",
-        tech: ["Next.js", "OpenAI API", "Stripe", "MongoDB"],
+        tech: ["Next.js", "OpenAI", "Stripe", "MongoDB"],
     },
     {
         id: 12,
         title: "Personal Finance Management Application",
         category: "Mobile Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
-        description: "A mobile app for tracking income, expenses, savings, and budgets, helping users manage their finances with clear insights and spending analytics.",
-        tech: ["React Native", "SQLite", "Tailwind"],
+        image: splitmoney,
+        video: splitmoney2,
+        description: "A mobile app for tracking income, expenses, savings, budgets, bills, debts, salary portions, automated reminders, and AI insights helping users manage their finances with clear insights and spending analytics.",
+        tech: ["React Native", "SQLite", "Tailwind", "Python", "FastAPI", "OpenAI"],
     },
     {
         id: 13,
