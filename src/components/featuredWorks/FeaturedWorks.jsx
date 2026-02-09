@@ -89,7 +89,7 @@ const projects = [
         image: psits,
         video: psits2,
         description: "A browser-based point-of-sale system for handling transactions, managing products, tracking sales, and generating financial reports in real time.",
-        tech: ["Next.js", "OpenAI", "Stripe", "MongoDB"],
+        tech: ["React.js", "Express.js", "Node.js", "MongoDB"],
     },
     {
         id: 8,
