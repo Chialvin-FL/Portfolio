@@ -22,6 +22,10 @@ import kayu from '../../assets/featuredWorks/kayuui.png';
 import kayu2 from '../../assets/featuredWorks/kayuui2.png';
 import splitmoney from '../../assets/featuredWorks/splitmoney.png';
 import splitmoney2 from '../../assets/featuredWorks/splitmoney2.png';
+import mimanuui from '../../assets/featuredWorks/mimanuui.png';
+import mimanuui2 from '../../assets/featuredWorks/mimanuui2.png';
+import psits from '../../assets/featuredWorks/psits.png';
+import psits2 from '../../assets/featuredWorks/psits2.png';
 
 const projects = [
     {
@@ -46,8 +50,8 @@ const projects = [
         id: 3,
         title: "Training Management System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-red-and-blue-digital-technology-connection-1718-large.mp4",
+        image: mimanuui,
+        video: mimanuui2,
         description: "A centralized platform for managing employee or student training programs, tracking progress, attendance, certifications, and performance evaluations.",
         tech: ["Javscript", "React.js", "Tailwind", "C#", "ASP .NET Core Web API", "Python", "FastAPI", "OpenAI", "OpenCV", "Hugging Transformers", "Firebase Authentication", "Firebase Firestore", "Paymongo"],
     },
@@ -82,8 +86,8 @@ const projects = [
         id: 7,
         title: "Web-Based POS System",
         category: "Web Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
+        image: psits,
+        video: psits2,
         description: "A browser-based point-of-sale system for handling transactions, managing products, tracking sales, and generating financial reports in real time.",
         tech: ["Next.js", "OpenAI", "Stripe", "MongoDB"],
     },
@@ -116,15 +120,6 @@ const projects = [
     },
     {
         id: 11,
-        title: "POS Inventory and Manufacturing System",
-        category: "Web Application",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=90",
-        video: "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-white-network-connection-2738-large.mp4",
-        description: "An integrated system that connects point-of-sale operations with inventory tracking and manufacturing workflows for better stock and production management.",
-        tech: ["Next.js", "OpenAI", "Stripe", "MongoDB"],
-    },
-    {
-        id: 12,
         title: "Personal Finance Management Application",
         category: "Mobile Application",
         image: splitmoney,
@@ -133,7 +128,7 @@ const projects = [
         tech: ["React Native", "SQLite", "Tailwind", "Python", "FastAPI", "OpenAI"],
     },
     {
-        id: 13,
+        id: 12,
         title: "POS Inventory and Manufacturing System",
         category: "Web Application",
         image: kayu,
