@@ -175,8 +175,45 @@ const FeaturedWorks = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedId, setSelectedId] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [imagesPreloaded, setImagesPreloaded] = useState(false);
     const rafRef = useRef(null);
     const tiltInstances = useRef([]);
+    const imageCache = useRef(new Map());
+
+    // Preload and cache all images
+    useEffect(() => {
+        const preloadImages = async () => {
+            const imagePromises = projects.flatMap(project => {
+                return [project.image, project.video].map(src => {
+                    // Check if already cached
+                    if (imageCache.current.has(src)) {
+                        return Promise.resolve();
+                    }
+
+                    return new Promise((resolve, reject) => {
+                        const img = new Image();
+                        img.onload = () => {
+                            imageCache.current.set(src, img);
+                            resolve();
+                        };
+                        img.onerror = reject;
+                        img.src = src;
+                    });
+                });
+            });
+
+            try {
+                await Promise.all(imagePromises);
+                setImagesPreloaded(true);
+            } catch (error) {
+                console.error('Error preloading images:', error);
+                // Still set as preloaded to allow the component to function
+                setImagesPreloaded(true);
+            }
+        };
+
+        preloadImages();
+    }, []);
 
     // Initialize Raf
     useEffect(() => {
