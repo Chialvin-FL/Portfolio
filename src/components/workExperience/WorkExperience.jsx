@@ -41,7 +41,7 @@ const experienceRows = [
     },
     {
         alvin: {
-            year: "2024 - 2025",
+            year: "2024 - Present",
             role: "Freelance Software Developer",
             company: "Self-employed",
             description: "Built custom websites and small-scale systems for clients, focusing on functionality, usability, and performance."
